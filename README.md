@@ -33,18 +33,22 @@ The **Mercenaries league** (also known as Mercenaries of Trarthus) is the curren
 #### 2025-08-19 - Mercenaries League API Validation
 
 **Working Endpoints (28):**
-- Currency, Fragment, Oil, Incubator, Scarab, Fossil, Resonator, Essence, DivinationCard, SkillGem, BaseType, UniqueMap, Map, UniqueJewel, UniqueFlask, UniqueWeapon, Beast, Vial, DeliriumOrb, Omen, UniqueRelic, ClusterJewel, BlightedMap, BlightRavagedMap, Invitation, Memory, Coffin, AllflameEmber
+- Currency, Fragment, Oil, Incubator, Scarab, Fossil, Resonator, Essence, DivinationCard, SkillGem, BaseType, UniqueMap, Map, UniqueJewel, UniqueFlask, UniqueWeapon, Beast, Vial, DeliriumOrb, Omen, UniqueRelic, ClusterJewel, BlightedMap, BlightRavagedMap, Invitation, AllflameEmber
 
-**Deprecated/Unavailable Endpoints (3):**
+**Deprecated/Unavailable Endpoints (5):**
 - `HelmetEnchant` - Returns empty data (0 items)
 - `Prophecy` - Returns empty data (0 items) 
 - `Watchstone` - Returns empty data (0 items)
+- `Memory` - Returns empty data (0 items)
+- `Coffin` - Returns empty data (0 items)
 
 **JSON Structure Changes (2):**
 - `UniqueArmour` - Missing expected 'links' field in response structure
 - `UniqueAccessory` - Missing expected 'links' field in response structure
 
 **Note:** These endpoints may have been modified or deprecated in the current league. The UniqueArmour and UniqueAccessory endpoints still return data but with altered JSON structure. Developers should update their code to handle the missing 'links' field or use alternative data sources.
+
+**📋 Complete API Schema Documentation:** For detailed field-by-field analysis, data types, and relationships across all endpoints, see [api_schema_analysis.md](api_schema_analysis.md).
 
 ### JSON Structure Changes Details
 
@@ -137,8 +141,8 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 |                  | BlightedMap ✅      |        |
 |                  | BlightRavagedMap ✅ |        |
 |                  | Invitation ✅       |        |
-|                  | Memory ✅           |        |
-|                  | Coffin ✅           |        |
+|                  | Memory ❌           | Empty data |
+|                  | Coffin ❌           | Empty data |
 |                  | AllflameEmber ✅    |        |
 ## Poe Ninja API
 
@@ -173,8 +177,7 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 | [Blighted Maps](#blighted-maps) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightedMap     |        |
 | [Blight Ravaged Maps](#blight-ravaged-maps) ✅ | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightRavagedMap |        |
 | [Invitations](#invitations) ✅            | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Invitation      |        |
-| [Memories](#memories) ✅                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory          |        |
-| [Coffins](#coffins) ✅                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin          |        |
+
 | [Allflame Embers](#allflame-embers) ✅    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber   |        |
 
 ### Deprecated/Empty Endpoints (Mercenaries League)
@@ -184,6 +187,8 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 | [Helmet Enchants](#helmet-enchants) ❌    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=HelmetEnchant   | Empty data |
 | [Prophecy](#prophecy) ❌                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Prophecy        | Empty data |
 | [Watchstone](#watchstone) ❌              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Watchstone      | Empty data |
+| [Memories](#memories) ❌                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory          | Empty data |
+| [Coffins](#coffins) ❌                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin          | Empty data |
 
 
 ## Currency
