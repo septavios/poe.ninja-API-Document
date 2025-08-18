@@ -7,7 +7,6 @@ Hi! I compiled **poe.ninja API** to use in projects
 - `Mercenaries` (Current league: Mercenaries of Trarthus)
 - `Standard`
 - `Hardcore`
-- `Settlers`
 
 ### Mercenaries League Information
 
