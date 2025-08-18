@@ -4,10 +4,47 @@ Hi! I compiled **poe.ninja API** to use in projects
 
 ### Active League Names
 
-- `Settlers`
+- `Mercenaries` (Current league: Mercenaries of Trarthus)
 - `Standard`
 - `Hardcore`
-- `Necropolis`
+- `Settlers`
+
+### Mercenaries League Information
+
+The **Mercenaries league** (also known as Mercenaries of Trarthus) is the current active challenge league, launched as part of Path of Exile: Secrets of the Atlas in version 3.26.0. <mcreference link="https://www.poewiki.net/wiki/Mercenaries_league" index="4">4</mcreference>
+
+**League Mechanic:**
+- Players will encounter lawless veterans from Trarthus known as Mercenaries
+- Mercenaries can be challenged to recruit them as allies or defeated for rewards
+- Each mercenary has unique equipment, skills, and enhancements
+- Hired mercenaries can have their equipment replaced with player-crafted items
+- Stronger mercenaries must be found in higher area level zones or maps
+- Rare noble mercenaries from the four major death trade families of Trarthus may be encountered
+
+**New Features:**
+- Exclusive Trarthan gems (similar to transfigured gems)
+- Infamous modifiers on noble mercenary equipment
+- 40 optional challenges with cosmetic rewards
+
+**API Availability:** All standard poe.ninja API endpoints are now available with `league=Mercenaries` parameter and returning valid JSON data.
+
+### API Status & Changelog
+
+#### 2025-08-19 - Mercenaries League API Validation
+
+**Working Endpoints (17):**
+- Currency, Fragment, Oil, Incubator, Scarab, Fossil, Resonator, Essence, DivinationCard, SkillGem, BaseType, UniqueMap, Map, UniqueJewel, UniqueFlask, UniqueWeapon, Beast
+
+**Deprecated/Unavailable Endpoints (3):**
+- `HelmetEnchant` - Returns empty data (0 items)
+- `Prophecy` - Returns empty data (0 items) 
+- `Watchstone` - Returns empty data (0 items)
+
+**JSON Structure Changes (2):**
+- `UniqueArmour` - Missing expected 'links' field in response structure
+- `UniqueAccessory` - Missing expected 'links' field in response structure
+
+**Note:** These endpoints may have been modified or deprecated in the current league. The UniqueArmour and UniqueAccessory endpoints still return data but with altered JSON structure. Developers should update their code to handle the missing 'links' field or use alternative data sources.
 
 JS Libraries I Prepared
 - poe-api-manager [NPM](https://www.npmjs.com/package/poe-api-manager) [Github](https://github.com/ayberkgezer/poe-api-manager)
@@ -16,72 +53,81 @@ JS Libraries I Prepared
 
 There are two types of data types in the poe ninja api. One is `currencyoverview` and the other is `itemoverview`.
 
-| currencyoverview | itemoverview    |
-| ---------------- | --------------- |
-| Currency         | Oil             |
-| Fragment         | Incubator       |
-|                  | Scarab          |
-|                  | Fossil          |
-|                  | Resonator       |
-|                  | Essence         |
-|                  | DivinationCard  |
-|                  | SkillGem        |
-|                  | BaseType        |
-|                  | HelmetEnchant   |
-|                  | UniqueMap       |
-|                  | Map             |
-|                  | UniqueJewel     |
-|                  | UniqueFlask     |
-|                  | UniqueWeapon    |
-|                  | UniqueArmour    |
-|                  | UniqueAccessory |
-|                  | Beast           |
-|                  | Vials           |
-|                  | Delirium Orbs   |
-||Omens|
-||Unique Relic|
-||Cluster Jewel|
-||Blighted Maps|
-||Blight Ravaged Maps|
-||Invitations|
-||Memories|
-||Coffins|
-||AllflameEmbers|
+**Legend:** ✅ Working | ⚠️ Structure Issues | ❌ Deprecated/Empty
+
+| currencyoverview | itemoverview        | Status |
+| ---------------- | ------------------- | ------ |
+| Currency ✅      | Oil ✅              |        |
+| Fragment ✅      | Incubator ✅        |        |
+|                  | Scarab ✅           |        |
+|                  | Fossil ✅           |        |
+|                  | Resonator ✅        |        |
+|                  | Essence ✅          |        |
+|                  | DivinationCard ✅   |        |
+|                  | SkillGem ✅         |        |
+|                  | BaseType ✅         |        |
+|                  | HelmetEnchant ❌    | Empty data |
+|                  | UniqueMap ✅        |        |
+|                  | Map ✅              |        |
+|                  | UniqueJewel ✅      |        |
+|                  | UniqueFlask ✅      |        |
+|                  | UniqueWeapon ✅     |        |
+|                  | UniqueArmour ⚠️     | Missing 'links' field |
+|                  | UniqueAccessory ⚠️  | Missing 'links' field |
+|                  | Beast ✅            |        |
+|                  | Prophecy ❌         | Empty data |
+|                  | Watchstone ❌       | Empty data |
 ## Poe Ninja API
 
-| Category                                                                                        | API                                                                             |
-| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Currency](#currency)                      | https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Currency    |
-| [Fragment](#fragment)                      | https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Fragment    |
-| [Oils](#oils)                              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Oil             |
-| [Incubators ](#incubators)                 | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Incubator       |
-| [Scarabs ](#scarabs)                       | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Scarab          |
-| [Fossils ](#fossils)                       | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Fossil          |
-| [Resonators ](#resonators)                 | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Resonator       |
-| [Essences ](#essences)                     | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Essence         |
-| [Divination Cards ](#divination-cards)     | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DivinationCard  |
-| [Skill Gems ](#skill-gems)                 | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=SkillGem        |
-| [Base Types ](#base-types)                 | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BaseType        |
-| [Helmet Enchants ](#helmet-enchants)       | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=HelmetEnchant   |
-| [Unique Maps ](#unique-maps)               | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueMap       |
-| [Maps ](#maps)                             | https://poe.ninja/api/data/itemoverview?type=Map&league=LEAGUE-NAME             |
-| [Unique Jewels ](#unique-jewels)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueJewel     |
-| [Unique Flasks ](#unique-flasks)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueFlask     |
-| [Unique Weapons ](#unique-weapons)         | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueWeapon    |
-| [Unique Armours ](#unique-armours)         | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueArmour    |
-| [Unique Accessories ](#unique-accessories) | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueAccessory |
-| [Beasts ](#beasts)                         | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Beast           |
-| [Vials ](#vials)                           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Vial            |
-| [Delirium Orbs ](#delirium-orbs)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DeliriumOrb     |
-| [Omens](#omens) | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Omen
-|[Unique Relics](#unique-relics)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueRelic|
-|[Cluster Jewels](#cluster-jewels)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=ClusterJewel|
-|[Blighted Maps](#blighted-maps)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightedMap|
-|[Blight Ravaged Maps](#blight-ravaged-maps)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightRavagedMap|
-|[Invitations](#invitations)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Invitation|
-|[Memories](#memories)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory|
-|[Coffins](#coffins)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin|
-|[Allflame Embers](#allflame-embers)|https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber|
+**Status Legend:** ✅ Working | ⚠️ Structure Issues | ❌ Deprecated/Empty
+
+| Category                                   | API                                                                             | Status |
+| ------------------------------------------ | ------------------------------------------------------------------------------- | ------ |
+| [Currency](#currency) ✅                  | https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Currency    |        |
+| [Fragment](#fragment) ✅                  | https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Fragment    |        |
+| [Oils](#oils) ✅                          | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Oil             |        |
+| [Incubators](#incubators) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Incubator       |        |
+| [Scarabs](#scarabs) ✅                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Scarab          |        |
+| [Fossils](#fossils) ✅                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Fossil          |        |
+| [Resonators](#resonators) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Resonator       |        |
+| [Essences](#essences) ✅                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Essence         |        |
+| [Divination Cards](#divination-cards) ✅  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DivinationCard  |        |
+| [Skill Gems](#skill-gems) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=SkillGem        |        |
+| [Base Types](#base-types) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BaseType        |        |
+| [Unique Maps](#unique-maps) ✅            | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueMap       |        |
+| [Maps](#maps) ✅                          | https://poe.ninja/api/data/itemoverview?type=Map&league=LEAGUE-NAME             |        |
+| [Unique Jewels](#unique-jewels) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueJewel     |        |
+| [Unique Flasks](#unique-flasks) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueFlask     |        |
+| [Unique Weapons](#unique-weapons) ✅      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueWeapon    |        |
+| [Unique Armours](#unique-armours) ⚠️      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueArmour    | Missing 'links' field |
+| [Unique Accessories](#unique-accessories) ⚠️ | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueAccessory | Missing 'links' field |
+| [Beasts](#beasts) ✅                      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Beast           |        |
+
+### Deprecated/Empty Endpoints (Mercenaries League)
+
+| Category                                   | API                                                                             | Status |
+| ------------------------------------------ | ------------------------------------------------------------------------------- | ------ |
+| [Helmet Enchants](#helmet-enchants) ❌    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=HelmetEnchant   | Empty data |
+| [Prophecy](#prophecy) ❌                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Prophecy        | Empty data |
+| [Watchstone](#watchstone) ❌              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Watchstone      | Empty data |
+
+### Untested Endpoints
+
+*Note: The following endpoints were not validated in the latest test and may or may not work with the Mercenaries league:*
+
+| Category                                   | API                                                                             |
+| ------------------------------------------ | ------------------------------------------------------------------------------- |
+| [Vials](#vials)                           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Vial            |
+| [Delirium Orbs](#delirium-orbs)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DeliriumOrb     |
+| [Omens](#omens)                           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Omen            |
+| [Unique Relics](#unique-relics)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueRelic     |
+| [Cluster Jewels](#cluster-jewels)         | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=ClusterJewel   |
+| [Blighted Maps](#blighted-maps)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightedMap     |
+| [Blight Ravaged Maps](#blight-ravaged-maps) | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightRavagedMap |
+| [Invitations](#invitations)               | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Invitation      |
+| [Memories](#memories)                     | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory          |
+| [Coffins](#coffins)                       | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin          |
+| [Allflame Embers](#allflame-embers)       | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber   |
 
 
 ## Currency
