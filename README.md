@@ -32,8 +32,8 @@ The **Mercenaries league** (also known as Mercenaries of Trarthus) is the curren
 
 #### 2025-08-19 - Mercenaries League API Validation
 
-**Working Endpoints (17):**
-- Currency, Fragment, Oil, Incubator, Scarab, Fossil, Resonator, Essence, DivinationCard, SkillGem, BaseType, UniqueMap, Map, UniqueJewel, UniqueFlask, UniqueWeapon, Beast
+**Working Endpoints (28):**
+- Currency, Fragment, Oil, Incubator, Scarab, Fossil, Resonator, Essence, DivinationCard, SkillGem, BaseType, UniqueMap, Map, UniqueJewel, UniqueFlask, UniqueWeapon, Beast, Vial, DeliriumOrb, Omen, UniqueRelic, ClusterJewel, BlightedMap, BlightRavagedMap, Invitation, Memory, Coffin, AllflameEmber
 
 **Deprecated/Unavailable Endpoints (3):**
 - `HelmetEnchant` - Returns empty data (0 items)
@@ -45,6 +45,58 @@ The **Mercenaries league** (also known as Mercenaries of Trarthus) is the curren
 - `UniqueAccessory` - Missing expected 'links' field in response structure
 
 **Note:** These endpoints may have been modified or deprecated in the current league. The UniqueArmour and UniqueAccessory endpoints still return data but with altered JSON structure. Developers should update their code to handle the missing 'links' field or use alternative data sources.
+
+### JSON Structure Changes Details
+
+#### Missing 'links' Field in UniqueArmour and UniqueAccessory
+
+**Affected Endpoints:**
+- `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueArmour`
+- `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueAccessory`
+
+**Issue:** The `links` field is missing from the JSON response structure.
+
+**Expected Structure (as seen in UniqueWeapon):**
+```json
+{
+  "name": "Starforge",
+  "baseType": "Infernal Sword",
+  "links": 6,
+  "chaosValue": 133776.09,
+  "id": 118882,
+  "icon": "...",
+  "levelRequired": 51,
+  "itemClass": 3,
+  "sparkline": {...},
+  "tradeInfo": [...]
+}
+```
+
+**Current Structure (UniqueArmour/UniqueAccessory):**
+```json
+{
+  "name": "Svalinn",
+  "baseType": "Girded Tower Shield",
+  "chaosValue": 1.5,
+  "id": 118882,
+  "icon": "...",
+  "levelRequired": 51,
+  "itemClass": 3,
+  "sparkline": {...},
+  "tradeInfo": [...]
+  // Note: 'links' field is missing
+}
+```
+
+**Impact:** Applications expecting the `links` field for socket link information will need to handle this missing field gracefully or use alternative data sources.
+
+**Workaround:** Check for the existence of the `links` field before accessing it:
+```javascript
+const links = item.links || null; // Handle missing links field
+if (links !== null) {
+  // Process links data
+}
+```
 
 JS Libraries I Prepared
 - poe-api-manager [NPM](https://www.npmjs.com/package/poe-api-manager) [Github](https://github.com/ayberkgezer/poe-api-manager)
@@ -77,6 +129,17 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 |                  | Beast ✅            |        |
 |                  | Prophecy ❌         | Empty data |
 |                  | Watchstone ❌       | Empty data |
+|                  | Vial ✅             |        |
+|                  | DeliriumOrb ✅      |        |
+|                  | Omen ✅             |        |
+|                  | UniqueRelic ✅      |        |
+|                  | ClusterJewel ✅     |        |
+|                  | BlightedMap ✅      |        |
+|                  | BlightRavagedMap ✅ |        |
+|                  | Invitation ✅       |        |
+|                  | Memory ✅           |        |
+|                  | Coffin ✅           |        |
+|                  | AllflameEmber ✅    |        |
 ## Poe Ninja API
 
 **Status Legend:** ✅ Working | ⚠️ Structure Issues | ❌ Deprecated/Empty
@@ -102,6 +165,17 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 | [Unique Armours](#unique-armours) ⚠️      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueArmour    | Missing 'links' field |
 | [Unique Accessories](#unique-accessories) ⚠️ | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueAccessory | Missing 'links' field |
 | [Beasts](#beasts) ✅                      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Beast           |        |
+| [Vials](#vials) ✅                        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Vial            |        |
+| [Delirium Orbs](#delirium-orbs) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DeliriumOrb     |        |
+| [Omens](#omens) ✅                        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Omen            |        |
+| [Unique Relics](#unique-relics) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueRelic     |        |
+| [Cluster Jewels](#cluster-jewels) ✅      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=ClusterJewel   |        |
+| [Blighted Maps](#blighted-maps) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightedMap     |        |
+| [Blight Ravaged Maps](#blight-ravaged-maps) ✅ | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightRavagedMap |        |
+| [Invitations](#invitations) ✅            | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Invitation      |        |
+| [Memories](#memories) ✅                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory          |        |
+| [Coffins](#coffins) ✅                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin          |        |
+| [Allflame Embers](#allflame-embers) ✅    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber   |        |
 
 ### Deprecated/Empty Endpoints (Mercenaries League)
 
@@ -110,24 +184,6 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 | [Helmet Enchants](#helmet-enchants) ❌    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=HelmetEnchant   | Empty data |
 | [Prophecy](#prophecy) ❌                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Prophecy        | Empty data |
 | [Watchstone](#watchstone) ❌              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Watchstone      | Empty data |
-
-### Untested Endpoints
-
-*Note: The following endpoints were not validated in the latest test and may or may not work with the Mercenaries league:*
-
-| Category                                   | API                                                                             |
-| ------------------------------------------ | ------------------------------------------------------------------------------- |
-| [Vials](#vials)                           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Vial            |
-| [Delirium Orbs](#delirium-orbs)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DeliriumOrb     |
-| [Omens](#omens)                           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Omen            |
-| [Unique Relics](#unique-relics)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueRelic     |
-| [Cluster Jewels](#cluster-jewels)         | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=ClusterJewel   |
-| [Blighted Maps](#blighted-maps)           | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightedMap     |
-| [Blight Ravaged Maps](#blight-ravaged-maps) | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightRavagedMap |
-| [Invitations](#invitations)               | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Invitation      |
-| [Memories](#memories)                     | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory          |
-| [Coffins](#coffins)                       | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin          |
-| [Allflame Embers](#allflame-embers)       | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber   |
 
 
 ## Currency
