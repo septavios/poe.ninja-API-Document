@@ -4,32 +4,19 @@ Hi! I compiled **poe.ninja API** to use in projects
 
 ### Active League Names
 
-- `Mercenaries` (Current league: Mercenaries of Trarthus)
+- `Keepers`
 - `Standard`
 - `Hardcore`
 
-### Mercenaries League Information
+### Keepers League Information
 
-The **Mercenaries league** (also known as Mercenaries of Trarthus) is the current active challenge league, launched as part of Path of Exile: Secrets of the Atlas in version 3.26.0. <mcreference link="https://www.poewiki.net/wiki/Mercenaries_league" index="4">4</mcreference>
+The **Keepers league** (also known as Keepers of the Flame) is the current active challenge league for Path of Exile 1. <mcreference link="https://www.poewiki.net/wiki/Keepers_league" index="1">1</mcreference>
 
-**League Mechanic:**
-- Players will encounter lawless veterans from Trarthus known as Mercenaries
-- Mercenaries can be challenged to recruit them as allies or defeated for rewards
-- Each mercenary has unique equipment, skills, and enhancements
-- Hired mercenaries can have their equipment replaced with player-crafted items
-- Stronger mercenaries must be found in higher area level zones or maps
-- Rare noble mercenaries from the four major death trade families of Trarthus may be encountered
-
-**New Features:**
-- Exclusive Trarthan gems (similar to transfigured gems)
-- Infamous modifiers on noble mercenary equipment
-- 40 optional challenges with cosmetic rewards
-
-**API Availability:** All standard poe.ninja API endpoints are now available with `league=Mercenaries` parameter and returning valid JSON data.
+**API Availability:** All standard poe.ninja economy endpoints are available with `league=Keepers` and return valid JSON.
 
 ### API Status & Changelog
 
-#### 2025-08-19 - Mercenaries League API Validation
+#### 2025-11-18 - Keepers League API Validation
 
 **Working Endpoints (28):**
 - Currency, Fragment, Oil, Incubator, Scarab, Fossil, Resonator, Essence, DivinationCard, SkillGem, BaseType, UniqueMap, Map, UniqueJewel, UniqueFlask, UniqueWeapon, Beast, Vial, DeliriumOrb, Omen, UniqueRelic, ClusterJewel, BlightedMap, BlightRavagedMap, Invitation, AllflameEmber
@@ -45,58 +32,25 @@ The **Mercenaries league** (also known as Mercenaries of Trarthus) is the curren
 - `UniqueArmour` - Missing expected 'links' field in response structure
 - `UniqueAccessory` - Missing expected 'links' field in response structure
 
-**Note:** These endpoints may have been modified or deprecated in the current league. The UniqueArmour and UniqueAccessory endpoints still return data but with altered JSON structure. Developers should update their code to handle the missing 'links' field or use alternative data sources.
+**Note:** Some endpoints are deprecated or structurally updated in Keepers. Developers should update code to handle field casing changes and optional fields.
 
 **📋 Complete API Schema Documentation:** For detailed field-by-field analysis, data types, and relationships across all endpoints, see [api_schema_analysis.md](api_schema_analysis.md).
 
 ### JSON Structure Changes Details
 
-#### Missing 'links' Field in UniqueArmour and UniqueAccessory
+#### Field casing update: `sparkLine`
 
-**Affected Endpoints:**
-- `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueArmour`
-- `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueAccessory`
+- In Keepers, item endpoints use `sparkLine` and `lowConfidenceSparkLine` (camelCase) instead of `sparkline`.
+- Update consumers to read the new field names.
 
-**Issue:** The `links` field is missing from the JSON response structure.
+#### Optional 'links' field
 
-**Expected Structure (as seen in UniqueWeapon):**
-```json
-{
-  "name": "Starforge",
-  "baseType": "Infernal Sword",
-  "links": 6,
-  "chaosValue": 133776.09,
-  "id": 118882,
-  "icon": "...",
-  "levelRequired": 51,
-  "itemClass": 3,
-  "sparkline": {...},
-  "tradeInfo": [...]
-}
-```
-
-**Current Structure (UniqueArmour/UniqueAccessory):**
-```json
-{
-  "name": "Svalinn",
-  "baseType": "Girded Tower Shield",
-  "chaosValue": 1.5,
-  "id": 118882,
-  "icon": "...",
-  "levelRequired": 51,
-  "itemClass": 3,
-  "sparkline": {...},
-  "tradeInfo": [...]
-  // Note: 'links' field is missing
-}
-```
-
-**Impact:** Applications expecting the `links` field for socket link information will need to handle this missing field gracefully or use alternative data sources.
-
-**Workaround:** Check for the existence of the `links` field before accessing it:
+- `UniqueAccessory` responses do not include `links`.
+- `UniqueArmour` and `UniqueWeapon` may include `links` on some entries; check presence before use.
+- Example handling:
 ```javascript
-const links = item.links || null; // Handle missing links field
-if (links !== null) {
+const links = item.links ?? null;
+if (links) {
   // Process links data
 }
 ```
@@ -147,52 +101,54 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 
 **Status Legend:** ✅ Working | ⚠️ Structure Issues | ❌ Deprecated/Empty
 
+Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/current/...`. Previous `https://poe.ninja/api/data/...` paths redirect.
+
 | Category                                   | API                                                                             | Status |
 | ------------------------------------------ | ------------------------------------------------------------------------------- | ------ |
-| [Currency](#currency) ✅                  | https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Currency    |        |
-| [Fragment](#fragment) ✅                  | https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Fragment    |        |
-| [Oils](#oils) ✅                          | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Oil             |        |
-| [Incubators](#incubators) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Incubator       |        |
-| [Scarabs](#scarabs) ✅                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Scarab          |        |
-| [Fossils](#fossils) ✅                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Fossil          |        |
-| [Resonators](#resonators) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Resonator       |        |
-| [Essences](#essences) ✅                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Essence         |        |
-| [Divination Cards](#divination-cards) ✅  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DivinationCard  |        |
-| [Skill Gems](#skill-gems) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=SkillGem        |        |
-| [Base Types](#base-types) ✅              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BaseType        |        |
-| [Unique Maps](#unique-maps) ✅            | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueMap       |        |
-| [Maps](#maps) ✅                          | https://poe.ninja/api/data/itemoverview?type=Map&league=LEAGUE-NAME             |        |
-| [Unique Jewels](#unique-jewels) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueJewel     |        |
-| [Unique Flasks](#unique-flasks) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueFlask     |        |
-| [Unique Weapons](#unique-weapons) ✅      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueWeapon    |        |
-| [Unique Armours](#unique-armours) ⚠️      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueArmour    | Missing 'links' field |
-| [Unique Accessories](#unique-accessories) ⚠️ | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueAccessory | Missing 'links' field |
-| [Beasts](#beasts) ✅                      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Beast           |        |
-| [Vials](#vials) ✅                        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Vial            |        |
-| [Delirium Orbs](#delirium-orbs) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DeliriumOrb     |        |
-| [Omens](#omens) ✅                        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Omen            |        |
-| [Unique Relics](#unique-relics) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueRelic     |        |
-| [Cluster Jewels](#cluster-jewels) ✅      | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=ClusterJewel   |        |
-| [Blighted Maps](#blighted-maps) ✅        | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightedMap     |        |
-| [Blight Ravaged Maps](#blight-ravaged-maps) ✅ | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightRavagedMap |        |
-| [Invitations](#invitations) ✅            | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Invitation      |        |
+| [Currency](#currency) ✅                  | https://poe.ninja/poe1/api/economy/stash/current/currency/overview?league=LEAGUE-NAME&type=Currency |        |
+| [Fragment](#fragment) ✅                  | https://poe.ninja/poe1/api/economy/stash/current/currency/overview?league=LEAGUE-NAME&type=Fragment |        |
+| [Oils](#oils) ✅                          | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Oil          |        |
+| [Incubators](#incubators) ✅              | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Incubator    |        |
+| [Scarabs](#scarabs) ✅                    | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Scarab       |        |
+| [Fossils](#fossils) ✅                    | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Fossil       |        |
+| [Resonators](#resonators) ✅              | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Resonator    |        |
+| [Essences](#essences) ✅                  | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Essence      |        |
+| [Divination Cards](#divination-cards) ✅  | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=DivinationCard |        |
+| [Skill Gems](#skill-gems) ✅              | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=SkillGem     |        |
+| [Base Types](#base-types) ✅              | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BaseType     |        |
+| [Unique Maps](#unique-maps) ✅            | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueMap    |        |
+| [Maps](#maps) ✅                          | https://poe.ninja/poe1/api/economy/stash/current/item/overview?type=Map&league=LEAGUE-NAME          |        |
+| [Unique Jewels](#unique-jewels) ✅        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueJewel  |        |
+| [Unique Flasks](#unique-flasks) ✅        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueFlask  |        |
+| [Unique Weapons](#unique-weapons) ✅      | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueWeapon |        |
+| [Unique Armours](#unique-armours) ✅      | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueArmour |        |
+| [Unique Accessories](#unique-accessories) ⚠️ | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueAccessory | `links` field absent |
+| [Beasts](#beasts) ✅                      | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Beast        |        |
+| [Vials](#vials) ✅                        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Vial         |        |
+| [Delirium Orbs](#delirium-orbs) ✅        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=DeliriumOrb  |        |
+| [Omens](#omens) ✅                        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Omen         |        |
+| [Unique Relics](#unique-relics) ✅        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueRelic  |        |
+| [Cluster Jewels](#cluster-jewels) ✅      | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=ClusterJewel |        |
+| [Blighted Maps](#blighted-maps) ✅        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BlightedMap  |        |
+| [Blight Ravaged Maps](#blight-ravaged-maps) ✅ | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BlightRavagedMap |        |
+| [Invitations](#invitations) ✅            | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Invitation   |        |
 
 | [Allflame Embers](#allflame-embers) ✅    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber   |        |
 
-### Deprecated/Empty Endpoints (Mercenaries League)
+### Deprecated/Empty Endpoints (Keepers League)
 
 | Category                                   | API                                                                             | Status |
 | ------------------------------------------ | ------------------------------------------------------------------------------- | ------ |
-| [Helmet Enchants](#helmet-enchants) ❌    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=HelmetEnchant   | Empty data |
-| [Prophecy](#prophecy) ❌                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Prophecy        | Empty data |
-| [Watchstone](#watchstone) ❌              | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Watchstone      | Empty data |
-| [Memories](#memories) ❌                  | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory          | Empty data |
-| [Coffins](#coffins) ❌                    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin          | Empty data |
+| [Helmet Enchants](#helmet-enchants) ❌    | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=HelmetEnchant | Empty data |
+| [Prophecy](#prophecy) ❌                  | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Prophecy       | Empty data |
+| [Watchstone](#watchstone) ❌              | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Watchstone     | Empty data |
+| [Memories](#memories) ❌                  | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Memory         | Empty data |
+| [Coffins](#coffins) ❌                    | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Coffin         | Empty data |
 
 
 ## Currency
 
-- `https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Currency`
+- `https://poe.ninja/poe1/api/economy/stash/current/currency/overview?league=LEAGUE-NAME&type=Currency`
 - `LEAGUE-NAME`: Write League Names
 - `chaosEquivalent`: Chaos Value
 - `pay_currency_id - get_currency_id`: Currency Id
@@ -259,7 +215,7 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 
 ## Fragment
 
-- `https://poe.ninja/api/data/currencyoverview?league=LEAGUE-NAME&type=Fragment`
+- `https://poe.ninja/poe1/api/economy/stash/current/currency/overview?league=LEAGUE-NAME&type=Fragment`
 - `LEAGUE-NAME`: Write League Names
 - `chaosEquivalent`: Chaos Value
 - `pay_currency_id - get_currency_id`: Fragment Id
@@ -316,7 +272,7 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 
 ## Oils
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Oil`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Oil`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -358,7 +314,7 @@ There are two types of data types in the poe ninja api. One is `currencyoverview
 
 ## Incubators
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Incubator`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Incubator`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name

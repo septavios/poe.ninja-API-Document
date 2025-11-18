@@ -1,13 +1,13 @@
 # poe.ninja API Schema Documentation
 
-Generated on: Tue Aug 19 02:46:43 +08 2025
-League: Mercenaries
+Generated on: Tue Nov 18 23:32:45 +08 2025
+League: Keepers
 
 ## Currency (currencyoverview)
 
 **Status:** ✅ Working
-**Items Count:** 111
-**URL:** `https://poe.ninja/api/data/currencyoverview?league=Mercenaries&type=Currency`
+**Items Count:** 113
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/currency/overview?league=Keepers&type=Currency`
 
 ### Field Schema
 
@@ -30,76 +30,76 @@ League: Mercenaries
   "currencyTypeName": "Mirror of Kalandra",
   "pay": {
     "id": 0,
-    "league_id": 259,
+    "league_id": 295,
     "pay_currency_id": 22,
     "get_currency_id": 1,
-    "sample_time_utc": "2025-08-18T18:26:35.6564187Z",
-    "count": 53,
-    "value": 0.00000607500000,
+    "sample_time_utc": "2025-11-18T15:09:00.5930362Z",
+    "count": 25,
+    "value": 0.00001975,
     "data_point_count": 1,
     "includes_secondary": true,
-    "listing_count": 248
+    "listing_count": 20
   },
   "receive": {
     "id": 0,
-    "league_id": 259,
+    "league_id": 295,
     "pay_currency_id": 1,
     "get_currency_id": 22,
-    "sample_time_utc": "2025-08-18T18:26:35.6564187Z",
-    "count": 59,
-    "value": 167617.44000000000000,
+    "sample_time_utc": "2025-11-18T15:09:00.5930362Z",
+    "count": 38,
+    "value": 51040,
     "data_point_count": 1,
     "includes_secondary": true,
-    "listing_count": 87
+    "listing_count": 42
   },
   "paySparkLine": {
+    "totalChange": 1.27,
     "data": [
       0,
       0,
       0,
+      -33.33,
       0,
       0,
-      0,
-      64.61
-    ],
-    "totalChange": 64.61
+      1.27
+    ]
   },
   "receiveSparkLine": {
+    "totalChange": 3.77,
     "data": [
       0,
-      -0.09,
-      1.61,
-      3.58,
-      3.13,
-      2.72,
-      2.79
-    ],
-    "totalChange": 2.79
+      -6.30,
+      -15.83,
+      -19.09,
+      -13.80,
+      2.96,
+      3.77
+    ]
   },
-  "chaosEquivalent": 166193.83,
+  "chaosEquivalent": 50879,
   "lowConfidencePaySparkLine": {
+    "totalChange": 1.27,
     "data": [
       0,
       0,
       0,
+      -33.33,
       0,
       0,
-      0,
-      64.61
-    ],
-    "totalChange": 64.61
+      1.27
+    ]
   },
   "lowConfidenceReceiveSparkLine": {
+    "totalChange": 3.77,
     "data": [
       0,
-      -0.09,
-      1.61,
-      3.58,
-      3.13,
-      2.72,
-      2.79
-    ],
-    "totalChange": 2.79
+      -6.30,
+      -15.83,
+      -19.09,
+      -13.80,
+      2.96,
+      3.77
+    ]
   },
   "detailsId": "mirror-of-kalandra"
 }
@@ -108,8 +108,8 @@ League: Mercenaries
 ## Fragment (currencyoverview)
 
 **Status:** ✅ Working
-**Items Count:** 82
-**URL:** `https://poe.ninja/api/data/currencyoverview?league=Mercenaries&type=Fragment`
+**Items Count:** 72
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/currency/overview?league=Keepers&type=Fragment`
 
 ### Field Schema
 
@@ -129,73 +129,73 @@ League: Mercenaries
 
 ```json
 {
-  "currencyTypeName": "Syndicate Medallion",
+  "currencyTypeName": "Voidborn Reliquary Key",
   "pay": {
     "id": 0,
-    "league_id": 259,
-    "pay_currency_id": 260,
+    "league_id": 295,
+    "pay_currency_id": 232,
     "get_currency_id": 1,
-    "sample_time_utc": "2025-08-18T18:09:26.220087Z",
-    "count": 2,
-    "value": 0.0084060,
+    "sample_time_utc": "2025-11-18T15:09:25.812547Z",
+    "count": 1,
+    "value": 0.00500,
     "data_point_count": 1,
     "includes_secondary": false,
-    "listing_count": 3
+    "listing_count": 1
   },
   "receive": {
     "id": 0,
-    "league_id": 259,
+    "league_id": 295,
     "pay_currency_id": 1,
-    "get_currency_id": 260,
-    "sample_time_utc": "2025-08-18T18:09:26.220087Z",
-    "count": 199,
-    "value": 1357.50000000000000,
+    "get_currency_id": 232,
+    "sample_time_utc": "2025-11-18T15:09:25.812547Z",
+    "count": 338,
+    "value": 278.4,
     "data_point_count": 1,
     "includes_secondary": true,
-    "listing_count": 577
+    "listing_count": 544
   },
   "paySparkLine": {
-    "data": [],
-    "totalChange": 0
+    "totalChange": 0,
+    "data": []
   },
   "receiveSparkLine": {
+    "totalChange": 15.04,
     "data": [
       0,
-      -1.58,
-      -2.88,
-      -1.44,
-      2.23,
-      2.23,
-      2.80
-    ],
-    "totalChange": 2.80
+      -1.65,
+      2.73,
+      -0.84,
+      4.55,
+      7.68,
+      15.04
+    ]
   },
-  "chaosEquivalent": 1357.50,
+  "chaosEquivalent": 278.4,
   "lowConfidencePaySparkLine": {
+    "totalChange": 61.80,
     "data": [
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0.05
-    ],
-    "totalChange": 0.05
+      -2.88,
+      61.80,
+      61.80,
+      61.80,
+      61.80,
+      61.80
+    ]
   },
   "lowConfidenceReceiveSparkLine": {
+    "totalChange": 15.04,
     "data": [
       0,
-      -1.58,
-      -2.88,
-      -1.44,
-      2.23,
-      2.23,
-      2.80
-    ],
-    "totalChange": 2.80
+      -1.65,
+      2.73,
+      -0.84,
+      4.55,
+      7.68,
+      15.04
+    ]
   },
-  "detailsId": "syndicate-medallion"
+  "detailsId": "voidborn-reliquary-key"
 }
 ```
 
@@ -203,7 +203,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 16
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Oil`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Oil`
 
 ### Field Schema
 
@@ -222,9 +222,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Oil endpoint |
+| `mutatedModifiers` | array | No | Field specific to Oil endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Oil endpoint |
 | `stackSize` | number | No | Field specific to Oil endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -238,48 +239,49 @@ League: Mercenaries
   "baseType": "Tainted Oil",
   "stackSize": 10,
   "itemClass": 5,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 0,
     "data": [
       0,
-      -2.66,
-      -3.19,
-      -2.64,
-      -2.65,
-      -3.21,
-      -2.35
-    ],
-    "totalChange": -2.35
+      -0.33,
+      -3.92,
+      -8.33,
+      -8.33,
+      -3.33,
+      0
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 0,
     "data": [
       0,
-      -2.66,
-      -3.19,
-      -2.64,
-      -2.65,
-      -3.21,
-      -2.35
-    ],
-    "totalChange": -2.35
+      -0.33,
+      -3.92,
+      -8.33,
+      -8.33,
+      -3.33,
+      0
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 593.89,
-  "exaltedValue": 24.48,
-  "divineValue": 4.44,
-  "count": 121,
+  "chaosValue": 60.00,
+  "exaltedValue": 6.77,
+  "divineValue": 0.52,
+  "count": 120,
   "detailsId": "tainted-oil",
   "tradeInfo": [],
-  "listingCount": 252
+  "listingCount": 120
 }
 ```
 
 ## Incubator (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 25
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Incubator`
+**Items Count:** 24
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Incubator`
 
 ### Field Schema
 
@@ -298,9 +300,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Incubator endpoint |
+| `mutatedModifiers` | array | No | Field specific to Incubator endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Incubator endpoint |
 | `stackSize` | number | No | Field specific to Incubator endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -314,29 +317,29 @@ League: Mercenaries
   "baseType": "Ornate Incubator",
   "stackSize": 10,
   "itemClass": 5,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 0,
     "data": [
       0,
-      8,
       0,
       0,
-      22.8,
-      60,
-      100
-    ],
-    "totalChange": 100
+      0,
+      0,
+      0,
+      0
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 0,
     "data": [
       0,
-      8,
       0,
       0,
-      22.8,
-      60,
-      100
-    ],
-    "totalChange": 100
+      0,
+      0,
+      0,
+      0
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
@@ -345,22 +348,23 @@ League: Mercenaries
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 10.00,
-  "exaltedValue": 0.41,
-  "divineValue": 0.07,
+  "chaosValue": 5.00,
+  "exaltedValue": 0.56,
+  "divineValue": 0.04,
   "count": 399,
   "detailsId": "ornate-incubator",
   "tradeInfo": [],
-  "listingCount": 24179
+  "listingCount": 14265
 }
 ```
 
 ## Scarab (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 109
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Scarab`
+**Items Count:** 108
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Scarab`
 
 ### Field Schema
 
@@ -379,9 +383,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Scarab endpoint |
+| `mutatedModifiers` | array | No | Field specific to Scarab endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Scarab endpoint |
 | `stackSize` | number | No | Field specific to Scarab endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -389,51 +394,52 @@ League: Mercenaries
 
 ```json
 {
-  "id": 114030,
-  "name": "Horned Scarab of Awakening",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU2NhcmFicy9TdXBlclNjYXJhYjQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/10856e6528/SuperScarab4.png",
-  "baseType": "Horned Scarab of Awakening",
+  "id": 113734,
+  "name": "Breach Scarab of Lordship",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvU2NhcmFicy9HcmVhdGVyU2NhcmFiQnJlYWNoIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/6c012fae5c/GreaterScarabBreach.png",
+  "baseType": "Breach Scarab of Lordship",
   "stackSize": 20,
   "itemClass": 0,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 10.54,
     "data": [
       0,
-      -5.74,
-      -6.12,
-      -5.79,
-      -1.66,
-      -1.67,
-      -1.65
-    ],
-    "totalChange": -1.65
+      0,
+      0,
+      21.03,
+      21.03,
+      10.54,
+      null
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 2045147,
     "data": [
       0,
-      -5.74,
-      -6.12,
-      -5.79,
-      -1.66,
-      -1.67,
-      -1.65
-    ],
-    "totalChange": -1.65
+      0,
+      0,
+      21.03,
+      21.03,
+      10.54,
+      2045147
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
     {
-      "text": "You can select one Imbued crafting option on the Map Device",
+      "text": "Breaches in Area each contain a Breachlord",
       "optional": false
     }
   ],
-  "flavourText": "The Atlas can be anything you want... and everything you want.",
-  "chaosValue": 294.40,
-  "exaltedValue": 12.17,
-  "divineValue": 2.20,
-  "count": 398,
-  "detailsId": "horned-scarab-of-awakening",
+  "mutatedModifiers": [],
+  "flavourText": "Their kingdoms always seek expansion.",
+  "chaosValue": 351169,
+  "exaltedValue": 39635,
+  "divineValue": 3046,
+  "count": 2,
+  "detailsId": "breach-scarab-of-lordship",
   "tradeInfo": [],
-  "listingCount": 1275
+  "listingCount": 6
 }
 ```
 
@@ -441,7 +447,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 25
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Fossil`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Fossil`
 
 ### Field Schema
 
@@ -460,9 +466,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Fossil endpoint |
+| `mutatedModifiers` | array | No | Field specific to Fossil endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Fossil endpoint |
 | `stackSize` | number | No | Field specific to Fossil endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -476,29 +483,29 @@ League: Mercenaries
   "baseType": "Hollow Fossil",
   "stackSize": 10,
   "itemClass": 5,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 24.93,
     "data": [
       0,
-      -2.00,
-      -8.21,
-      -8.05,
-      -8.22,
-      -14.78,
-      -14.70
-    ],
-    "totalChange": -14.70
+      0.25,
+      -1.78,
+      6.69,
+      7.28,
+      19.20,
+      24.93
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 24.93,
     "data": [
       0,
-      -2.00,
-      -8.21,
-      -8.05,
-      -8.22,
-      -14.78,
-      -14.70
-    ],
-    "totalChange": -14.70
+      0.25,
+      -1.78,
+      6.69,
+      7.28,
+      19.20,
+      24.93
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
@@ -507,14 +514,15 @@ League: Mercenaries
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 174.08,
-  "exaltedValue": 7.18,
-  "divineValue": 1.30,
-  "count": 239,
+  "chaosValue": 104.8,
+  "exaltedValue": 11.83,
+  "divineValue": 0.91,
+  "count": 49,
   "detailsId": "hollow-fossil",
   "tradeInfo": [],
-  "listingCount": 467
+  "listingCount": 52
 }
 ```
 
@@ -522,7 +530,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 4
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Resonator`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Resonator`
 
 ### Field Schema
 
@@ -541,9 +549,10 @@ League: Mercenaries
 | `implicitModifiers` | array | Yes | Array of implicit item modifiers |
 | `itemClass` | number | Yes | Numeric identifier for the item class category |
 | `listingCount` | number | Yes | Number of active trade listings |
-| `lowConfidenceSparkline` | object | Yes | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | Yes | Field specific to Resonator endpoint |
+| `mutatedModifiers` | array | Yes | Field specific to Resonator endpoint |
 | `name` | string | Yes | Display name of the item |
-| `sparkline` | object | Yes | Price trend data over time |
+| `sparkLine` | object | Yes | Field specific to Resonator endpoint |
 | `stackSize` | number | Yes | Field specific to Resonator endpoint |
 | `tradeInfo` | array | Yes | Additional trading information and metadata |
 
@@ -557,48 +566,49 @@ League: Mercenaries
   "baseType": "Prime Chaotic Resonator",
   "stackSize": 10,
   "itemClass": 5,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": -13.79,
     "data": [
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "totalChange": 0
+      3.45,
+      3.45,
+      -5.17,
+      -8.10,
+      -13.79,
+      -13.79
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": -13.79,
     "data": [
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "totalChange": 0
+      3.45,
+      3.45,
+      -5.17,
+      -8.10,
+      -13.79,
+      -13.79
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 75.00,
-  "exaltedValue": 3.09,
-  "divineValue": 0.56,
-  "count": 398,
+  "chaosValue": 25.00,
+  "exaltedValue": 2.82,
+  "divineValue": 0.22,
+  "count": 399,
   "detailsId": "prime-chaotic-resonator",
   "tradeInfo": [],
-  "listingCount": 2361
+  "listingCount": 527
 }
 ```
 
 ## Essence (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 105
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Essence`
+**Items Count:** 104
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Essence`
 
 ### Field Schema
 
@@ -617,10 +627,11 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Essence endpoint |
 | `mapTier` | number | No | Field specific to Essence endpoint |
+| `mutatedModifiers` | array | No | Field specific to Essence endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Essence endpoint |
 | `stackSize` | number | No | Field specific to Essence endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -635,29 +646,29 @@ League: Mercenaries
   "baseType": "Essence of Horror",
   "stackSize": 9,
   "itemClass": 5,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 11.11,
     "data": [
       0,
-      -0.35,
-      -0.79,
-      -1.41,
-      -0.86,
-      -0.79,
-      -0.79
-    ],
-    "totalChange": -0.79
+      0,
+      0,
+      0,
+      0,
+      3.67,
+      11.11
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 11.11,
     "data": [
       0,
-      -0.35,
-      -0.79,
-      -1.41,
-      -0.86,
-      -0.79,
-      -0.79
-    ],
-    "totalChange": -0.79
+      0,
+      0,
+      0,
+      0,
+      3.67,
+      11.11
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
@@ -710,22 +721,23 @@ League: Mercenaries
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 30.00,
-  "exaltedValue": 1.24,
-  "divineValue": 0.22,
-  "count": 267,
+  "chaosValue": 10.00,
+  "exaltedValue": 1.13,
+  "divineValue": 0.09,
+  "count": 119,
   "detailsId": "essence-of-horror",
   "tradeInfo": [],
-  "listingCount": 689
+  "listingCount": 129
 }
 ```
 
 ## DivinationCard (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 445
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=DivinationCard`
+**Items Count:** 446
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=DivinationCard`
 
 ### Field Schema
 
@@ -745,9 +757,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to DivinationCard endpoint |
+| `mutatedModifiers` | array | No | Field specific to DivinationCard endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to DivinationCard endpoint |
 | `stackSize` | number | No | Field specific to DivinationCard endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -755,60 +768,53 @@ League: Mercenaries
 
 ```json
 {
-  "id": 636,
-  "name": "House of Mirrors",
+  "id": 67973,
+  "name": "The Emptiness",
   "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvRGl2aW5hdGlvbi9JbnZlbnRvcnlJY29uIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/f34bf8cbb5/InventoryIcon.png",
-  "baseType": "House of Mirrors",
-  "stackSize": 9,
-  "artFilename": "HouseOfMirrors",
+  "baseType": "The Emptiness",
+  "stackSize": 6,
+  "artFilename": "TheEmptiness",
   "itemClass": 6,
-  "sparkline": {
-    "data": [
-      0,
-      0.45,
-      -2.44,
-      24.79,
-      22.73,
-      18.80,
-      18.08
-    ],
-    "totalChange": 18.08
+  "sparkLine": {
+    "totalChange": 0,
+    "data": []
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 5066,
     "data": [
       0,
-      0.45,
-      -2.44,
-      24.79,
-      22.73,
-      18.80,
-      18.08
-    ],
-    "totalChange": 18.08
+      -4.68,
+      -7.02,
+      4730,
+      4763,
+      4900,
+      5066
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
     {
-      "text": "<currencyitem>{Mirror of Kalandra}",
+      "text": "<gemitem>{Vaal Breach}\n<default>{Quality:} <augmented>{+6%}\n<corrupted>{Corrupted}",
       "optional": false
     }
   ],
-  "flavourText": "What do you see in the mirror?",
-  "chaosValue": 27968.38,
-  "exaltedValue": 1156.20,
-  "divineValue": 209.00,
-  "count": 119,
-  "detailsId": "house-of-mirrors",
+  "mutatedModifiers": [],
+  "flavourText": "He appeared before the Light Eater, and at once knew his soul was damned.",
+  "chaosValue": 23060,
+  "exaltedValue": 2603,
+  "divineValue": 200.0,
+  "count": 1,
+  "detailsId": "the-emptiness",
   "tradeInfo": [],
-  "listingCount": 168
+  "listingCount": 2
 }
 ```
 
 ## SkillGem (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 7059
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=SkillGem`
+**Items Count:** 7178
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=SkillGem`
 
 ### Field Schema
 
@@ -816,7 +822,7 @@ League: Mercenaries
 |------------|-----------|----------|-------------|
 | `baseType` | string | No | Base item type name |
 | `chaosValue` | number | No | Current market value in Chaos Orbs |
-| `corrupted` | boolean | No | Field specific to SkillGem endpoint |
+| `corrupted` | boolean | Yes | Field specific to SkillGem endpoint |
 | `count` | number | No | Number of items available in the market |
 | `detailsId` | string | No | Unique identifier for detailed item information |
 | `divineValue` | number | No | Current market value in Divine Orbs |
@@ -824,16 +830,17 @@ League: Mercenaries
 | `explicitModifiers` | array | No | Array of explicit item modifiers |
 | `flavourText` | string | No | Lore text associated with the item |
 | `gemLevel` | number | No | Field specific to SkillGem endpoint |
-| `gemQuality` | number | No | Field specific to SkillGem endpoint |
+| `gemQuality` | number | Yes | Field specific to SkillGem endpoint |
 | `icon` | string | No | URL to the item's icon image |
 | `id` | number | No | Unique identifier for the item |
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `levelRequired` | number | No | Minimum character level required to use the item |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to SkillGem endpoint |
+| `mutatedModifiers` | array | No | Field specific to SkillGem endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to SkillGem endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 | `variant` | string | No | Field specific to SkillGem endpoint |
 
@@ -841,75 +848,64 @@ League: Mercenaries
 
 ```json
 {
-  "id": 21098,
-  "name": "Purifying Flame",
-  "icon": "https://web.poecdn.com/gen/image/WzMwLDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9QdXJpZnlpbmdGbGFtZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/e933be7d7c/PurifyingFlame.png",
-  "levelRequired": 72,
-  "baseType": "Purifying Flame",
-  "variant": "21/23c",
+  "id": 96363,
+  "name": "Awakened Enlighten Support",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L1N1cHBvcnRQbHVzL0VubGlnaHRlbnBsdXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7ec7d0544d/Enlightenplus.png",
+  "levelRequired": 80,
+  "baseType": "Awakened Enlighten Support",
+  "variant": "5/20c",
   "itemClass": 4,
-  "sparkline": {
-    "data": [],
-    "totalChange": 0
-  },
-  "lowConfidenceSparkline": {
+  "sparkLine": {
+    "totalChange": 17.94,
     "data": [
       null,
       null,
+      0,
       null,
       null,
-      null,
-      null,
-      0
-    ],
-    "totalChange": 0
+      17.94,
+      null
+    ]
+  },
+  "lowConfidenceSparkLine": {
+    "totalChange": -13.69,
+    "data": [
+      0,
+      -9.28,
+      -16.24,
+      -20.51,
+      -18.07,
+      -1.21,
+      -13.69
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
     {
-      "text": "Deals 1487 to 2230 Physical Damage",
-      "optional": false
-    },
-    {
-      "text": "Base duration is 4 seconds",
-      "optional": false
-    },
-    {
-      "text": "50% of Physical Damage Converted to Fire Damage",
-      "optional": false
-    },
-    {
-      "text": "+0.5 metres to radius",
-      "optional": false
-    },
-    {
-      "text": "+1 metre to radius of Consecrated Ground",
-      "optional": false
-    },
-    {
-      "text": "Shockwave deals 25% less Damage",
+      "text": "This Gem gains 100% increased Experience",
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "",
   "corrupted": true,
-  "gemLevel": 21,
-  "gemQuality": 23,
-  "chaosValue": 1152759.33,
-  "exaltedValue": 47654.37,
-  "divineValue": 8614.25,
-  "count": 2,
-  "detailsId": "purifying-flame-21-23c",
+  "gemLevel": 5,
+  "gemQuality": 20,
+  "chaosValue": 86303,
+  "exaltedValue": 9741,
+  "divineValue": 748.5,
+  "count": 3,
+  "detailsId": "awakened-enlighten-support-5-20c",
   "tradeInfo": [],
-  "listingCount": 8
+  "listingCount": 3
 }
 ```
 
 ## BaseType (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 22043
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=BaseType`
+**Items Count:** 22707
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=BaseType`
 
 ### Field Schema
 
@@ -930,50 +926,52 @@ League: Mercenaries
 | `itemType` | string | No | Descriptive item type category |
 | `levelRequired` | number | No | Minimum character level required to use the item |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to BaseType endpoint |
+| `mutatedModifiers` | array | No | Field specific to BaseType endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to BaseType endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
-| `variant` | string | Yes | Field specific to BaseType endpoint |
+| `variant` | string | No | Field specific to BaseType endpoint |
 
 ### Sample Response
 
 ```json
 {
-  "id": 64477,
-  "name": "Zealot Gloves",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9HbG92ZXMvR2xvdmVzU3RySW50MiIsInciOjIsImgiOjIsInNjYWxlIjoxfV0/f09ae395f5/GlovesStrInt2.png",
+  "id": 39592,
+  "name": "Scarlet Raiment",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQXJtb3Vycy9Cb2R5QXJtb3Vycy9Cb2R5RGV4SW50MUMiLCJ3IjoyLCJoIjozLCJzY2FsZSI6MX1d/95329b265f/BodyDexInt1C.png",
   "levelRequired": 86,
-  "baseType": "Zealot Gloves",
-  "variant": "Warlord/Hunter",
+  "baseType": "Scarlet Raiment",
+  "variant": "Hunter",
   "itemClass": 2,
-  "sparkline": {
-    "data": [],
-    "totalChange": 0
+  "sparkLine": {
+    "totalChange": 0,
+    "data": []
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 3037908,
     "data": [
       0,
-      -0.02,
-      0.91,
-      2.57,
-      2.36,
-      2.12,
-      2.15
-    ],
-    "totalChange": 2.15
+      0,
+      0,
+      0,
+      0,
+      0,
+      3037908
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "itemType": "Gloves",
-  "chaosValue": 831129.05,
-  "exaltedValue": 34259.24,
-  "divineValue": 6206.62,
-  "count": 1,
-  "detailsId": "zealot-gloves-86-warlord-hunter",
+  "itemType": "Body Armour",
+  "chaosValue": 625830,
+  "exaltedValue": 70635,
+  "divineValue": 5428,
+  "count": 2,
+  "detailsId": "scarlet-raiment-86-hunter",
   "tradeInfo": [],
-  "listingCount": 1
+  "listingCount": 3
 }
 ```
 
@@ -981,13 +979,13 @@ League: Mercenaries
 
 **Status:** ❌ Deprecated/Empty
 **Items Count:** 0
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=HelmetEnchant`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=HelmetEnchant`
 
 ## UniqueMap (itemoverview)
 
 **Status:** ✅ Working
 **Items Count:** 82
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueMap`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=UniqueMap`
 
 ### Field Schema
 
@@ -1006,56 +1004,71 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to UniqueMap endpoint |
 | `mapTier` | number | No | Field specific to UniqueMap endpoint |
+| `mutatedModifiers` | array | No | Field specific to UniqueMap endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to UniqueMap endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
 
 ```json
 {
-  "id": 42559,
-  "name": "Infused Beachhead",
-  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9IYXJiaW5nZXJVYmVyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/91398360e4/HarbingerUber.png",
+  "id": 44339,
+  "name": "Doryani's Machinarium",
+  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9Eb3J5YW5pcyIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/581444be53/Doryanis.png",
   "mapTier": 16,
-  "baseType": "Harbinger Map",
+  "baseType": "Maze Map",
   "itemClass": 3,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 174.5,
     "data": [
       0,
-      -1.18,
-      -1.65,
-      -1.48,
-      -1.66,
-      -1.67,
-      -1.58
-    ],
-    "totalChange": -1.58
+      13.90,
+      12,
+      108,
+      106.8,
+      118.3,
+      174.5
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 174.5,
     "data": [
       0,
-      -1.18,
-      -1.65,
-      -1.48,
-      -1.66,
-      -1.67,
-      -1.58
-    ],
-    "totalChange": -1.58
+      13.90,
+      12,
+      108,
+      106.8,
+      118.3,
+      174.5
+    ]
   },
   "implicitModifiers": [],
-  "explicitModifiers": [],
-  "flavourText": "<<HBGAa>><<HBG01>><<HBGAf>><<HBG02>><<HBGAm>><<HBG03>><<HBGAo>>\n<<HBG02>><<HBGAt>><<HBG03>><<HBGAy>>",
-  "chaosValue": 133.91,
-  "exaltedValue": 5.52,
-  "divineValue": 1.00,
-  "count": 42,
-  "detailsId": "infused-beachhead-t16",
+  "explicitModifiers": [
+    {
+      "text": "(20-50)% increased Experience gain",
+      "optional": false
+    },
+    {
+      "text": "Unique Boss is augmented by Player choices",
+      "optional": false
+    },
+    {
+      "text": "Found Items have 10% chance to drop Corrupted in Area",
+      "optional": false
+    }
+  ],
+  "mutatedModifiers": [],
+  "flavourText": "We are ever the makers of our own undoing.",
+  "chaosValue": 576.5,
+  "exaltedValue": 65.07,
+  "divineValue": 5.00,
+  "count": 95,
+  "detailsId": "doryanis-machinarium-t16",
   "tradeInfo": [],
-  "listingCount": 134
+  "listingCount": 95
 }
 ```
 
@@ -1063,7 +1076,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 372
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Map`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Map`
 
 ### Field Schema
 
@@ -1082,10 +1095,11 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Map endpoint |
 | `mapTier` | number | No | Field specific to Map endpoint |
+| `mutatedModifiers` | array | No | Field specific to Map endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Map endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 | `variant` | string | No | Field specific to Map endpoint |
 
@@ -1093,55 +1107,56 @@ League: Mercenaries
 
 ```json
 {
-  "id": 124914,
-  "name": "Sanctuary Map",
-  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9BdGxhczJNYXBzL05ldy9VYmVyUmVsaWNDaGFtYmVycyIsInciOjEsImgiOjEsInNjYWxlIjoxLCJtbiI6MjIsIm10IjoxN31d/ed52107b98/UberRelicChambers.png",
+  "id": 128210,
+  "name": "Ziggurat Map",
+  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9BdGxhczJNYXBzL05ldy9VYmVyTWF1c29sZXVtIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsIm1uIjoyMywibXQiOjE3fV0/d902446871/UberMausoleum.png",
   "mapTier": 17,
-  "baseType": "Sanctuary Map",
-  "variant": ", Gen-22",
+  "baseType": "Ziggurat Map",
+  "variant": ", Gen-23",
   "itemClass": 2,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 16.23,
     "data": [
       0,
-      -6.44,
-      -2.69,
-      -5.78,
-      -11.01,
-      -6.28,
-      51.11
-    ],
-    "totalChange": 51.11
+      -7.02,
+      -7.02,
+      -7.14,
+      -7.02,
+      4.60,
+      16.23
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 16.23,
     "data": [
       0,
-      -6.44,
-      -2.69,
-      -5.78,
-      -11.01,
-      -6.28,
-      51.11
-    ],
-    "totalChange": 51.11
+      -7.02,
+      -7.02,
+      -7.14,
+      -7.02,
+      4.60,
+      16.23
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 72.17,
-  "exaltedValue": 2.97,
-  "divineValue": 0.54,
+  "chaosValue": 50.00,
+  "exaltedValue": 5.64,
+  "divineValue": 0.43,
   "count": 399,
-  "detailsId": "sanctuary-map-t17-gen-22",
+  "detailsId": "ziggurat-map-t17-gen-23",
   "tradeInfo": [],
-  "listingCount": 68310
+  "listingCount": 5307
 }
 ```
 
 ## UniqueJewel (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 110
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueJewel`
+**Items Count:** 124
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=UniqueJewel`
 
 ### Field Schema
 
@@ -1160,9 +1175,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to UniqueJewel endpoint |
+| `mutatedModifiers` | array | No | Field specific to UniqueJewel endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to UniqueJewel endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
@@ -1174,48 +1190,49 @@ League: Mercenaries
   "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL1VuaXF1ZUpld2VsQmFzZTMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/314c9905c8/UniqueJewelBase3.png",
   "baseType": "Large Cluster Jewel",
   "itemClass": 3,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 18.23,
     "data": [
       0,
-      -0.02,
-      0.91,
-      2.57,
-      2.36,
-      2.13,
-      2.15
-    ],
-    "totalChange": 2.15
+      -0.79,
+      -7.32,
+      -13.79,
+      -12.14,
+      15.78,
+      18.23
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 18.23,
     "data": [
       0,
-      -0.02,
-      0.91,
-      2.57,
-      2.36,
-      2.13,
-      2.15
-    ],
-    "totalChange": 2.15
+      -0.79,
+      -7.32,
+      -13.79,
+      -12.14,
+      15.78,
+      18.23
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "Only a madman would ignore a god's instructions.",
-  "chaosValue": 182848.39,
-  "exaltedValue": 7537.03,
-  "divineValue": 1365.46,
-  "count": 100,
+  "chaosValue": 42546,
+  "exaltedValue": 4802,
+  "divineValue": 369.0,
+  "count": 71,
   "detailsId": "voices-large-cluster-jewel",
   "tradeInfo": [],
-  "listingCount": 151
+  "listingCount": 71
 }
 ```
 
 ## UniqueFlask (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 41
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueFlask`
+**Items Count:** 43
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=UniqueFlask`
 
 ### Field Schema
 
@@ -1235,72 +1252,74 @@ League: Mercenaries
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `levelRequired` | number | No | Minimum character level required to use the item |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to UniqueFlask endpoint |
+| `mutatedModifiers` | array | No | Field specific to UniqueFlask endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to UniqueFlask endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
 
 ```json
 {
-  "id": 99289,
-  "name": "Dying Sun",
-  "icon": "https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvU2hhcGVyc0ZsYXNrIiwidyI6MSwiaCI6Miwic2NhbGUiOjEsImxldmVsIjoxLCJmaSI6dHJ1ZSwicmVsaWMiOjB9XQ/ef28263899/ShapersFlask.png",
-  "levelRequired": 68,
-  "baseType": "Ruby Flask",
+  "id": 101729,
+  "name": "Progenesis",
+  "icon": "https://web.poecdn.com/gen/image/WzksMTQseyJmIjoiMkRJdGVtcy9GbGFza3MvVWJlck1hdmVuRmxhc2siLCJ3IjoxLCJoIjoyLCJzY2FsZSI6MSwibGV2ZWwiOjEsInJlbGljIjowfV0/ac476ad3d0/UberMavenFlask.png",
+  "levelRequired": 60,
+  "baseType": "Amethyst Flask",
   "itemClass": 9,
-  "sparkline": {
-    "data": [],
-    "totalChange": 0
+  "sparkLine": {
+    "totalChange": 0,
+    "data": []
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 61.43,
     "data": [
       0,
-      2.08,
-      236.46,
-      2445.04,
-      2441.05,
-      2440.67,
-      2443.14
-    ],
-    "totalChange": 2443.14
+      -5.68,
+      8.73,
+      6.33,
+      0.36,
+      4.39,
+      61.43
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
     {
-      "text": "(125-150)% increased Charges per use",
+      "text": "(10-20)% reduced Charges per use",
       "optional": false
     },
     {
-      "text": "(40-60)% less Duration",
-      "optional": false
+      "text": "(1-35)% reduced Duration",
+      "optional": true
     },
     {
-      "text": "(10-20)% increased Area of Effect during Effect",
-      "optional": false
+      "text": "(8-35)% increased Duration",
+      "optional": true
     },
     {
-      "text": "Skills fire 2 additional Projectiles during Effect",
+      "text": "When Hit during effect, 25% of Life loss from Damage taken occurs over 4 seconds instead",
       "optional": false
     }
   ],
-  "flavourText": "All things must die.\nWhether you burn out or explode is up to you.",
-  "chaosValue": 66955.00,
-  "exaltedValue": 2759.89,
-  "divineValue": 500.00,
+  "mutatedModifiers": [],
+  "flavourText": "They were bred in a cosmic ocean of raw creation.\nFeasting and drinking of the milk of the mother,\nthey fought to the death for every last drop.",
+  "chaosValue": 18217,
+  "exaltedValue": 2056,
+  "divineValue": 158.0,
   "count": 1,
-  "detailsId": "dying-sun-relic",
+  "detailsId": "progenesis-relic",
   "tradeInfo": [],
-  "listingCount": 3
+  "listingCount": 1
 }
 ```
 
 ## UniqueWeapon (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 486
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueWeapon`
+**Items Count:** 762
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=UniqueWeapon`
 
 ### Field Schema
 
@@ -1319,90 +1338,78 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `itemType` | string | No | Descriptive item type category |
-| `levelRequired` | number | No | Minimum character level required to use the item |
-| `links` | number | Yes | Number of linked sockets (for socketable items) |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to UniqueWeapon endpoint |
+| `mutatedModifiers` | array | No | Field specific to UniqueWeapon endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to UniqueWeapon endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
+| `variant` | string | Yes | Field specific to UniqueWeapon endpoint |
 
 ### Sample Response
 
 ```json
 {
-  "id": 99590,
-  "name": "Starforge",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9Ud29IYW5kU3dvcmRzL1N0YXJmb3JnZSIsInciOjIsImgiOjQsInNjYWxlIjoxLCJyZWxpYyI6MH1d/1a41d46a59/Starforge.png",
-  "levelRequired": 67,
-  "baseType": "Infernal Sword",
-  "links": 6,
-  "itemClass": 9,
-  "sparkline": {
-    "data": [],
-    "totalChange": 0
+  "id": 130152,
+  "name": "Foulborn Reefbane",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvV2VhcG9ucy9Ud29IYW5kV2VhcG9ucy9GaXNoaW5nUm9kcy9SZWVmYmFuZSIsInciOjEsImgiOjQsInNjYWxlIjoxLCJtdXRhdGVkIjp0cnVlfV0/7ca32d21f4/Reefbane.png",
+  "baseType": "Fishing Rod",
+  "variant": "Cast Stun, Otherworldly Lure",
+  "itemClass": 3,
+  "sparkLine": {
+    "totalChange": 0,
+    "data": []
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 743.4,
     "data": [
       0,
-      -0.02,
-      0.91,
-      2.57,
-      -17.85,
-      -17.86,
-      -17.79
-    ],
-    "totalChange": -17.79
+      187.3,
+      160.8,
+      -83.37,
+      22.65,
+      826.3,
+      743.4
+    ]
   },
-  "implicitModifiers": [
-    {
-      "text": "30% increased Global Physical Damage",
-      "optional": false
-    }
-  ],
+  "implicitModifiers": [],
   "explicitModifiers": [
     {
-      "text": "449% increased Physical Damage",
+      "text": "(12-20)% increased Quantity of Fish Caught",
       "optional": false
     },
     {
-      "text": "8% increased Attack Speed",
-      "optional": false
-    },
-    {
-      "text": "+100 to maximum Life",
-      "optional": false
-    },
-    {
-      "text": "Your Physical Damage can Shock",
-      "optional": false
-    },
-    {
-      "text": "20% increased Area of Effect for Attacks",
-      "optional": false
-    },
-    {
-      "text": "Deal no Elemental Damage",
+      "text": "Glows while in an Area containing a Unique Fish",
       "optional": false
     }
   ],
-  "flavourText": "The end is written into the beginning.",
-  "itemType": "Two Handed Sword",
-  "chaosValue": 133776.09,
-  "exaltedValue": 5514.27,
-  "divineValue": 999.00,
-  "count": 1,
-  "detailsId": "starforge-infernal-sword-relic-6l",
+  "mutatedModifiers": [
+    {
+      "text": "(33-40)% chance to Ignore Stuns while Casting",
+      "optional": false
+    },
+    {
+      "text": "Otherworldly Lure",
+      "optional": false
+    }
+  ],
+  "flavourText": "He cast far into the ocean\nAnd tore out her heart.",
+  "itemType": "Fishing Rod",
+  "chaosValue": 22507,
+  "exaltedValue": 2540,
+  "divineValue": 195.2,
+  "count": 3,
+  "detailsId": "foulborn-reefbane-cast-stun-otherworldly-lure-fishing-rod",
   "tradeInfo": [],
-  "listingCount": 1
+  "listingCount": 3
 }
 ```
 
 ## UniqueArmour (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 686
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueArmour`
+**Items Count:** 897
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=UniqueArmour`
 
 ### Field Schema
 
@@ -1423,9 +1430,10 @@ League: Mercenaries
 | `itemType` | string | No | Descriptive item type category |
 | `levelRequired` | number | No | Minimum character level required to use the item |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to UniqueArmour endpoint |
+| `mutatedModifiers` | array | No | Field specific to UniqueArmour endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to UniqueArmour endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
@@ -1438,29 +1446,29 @@ League: Mercenaries
   "levelRequired": 51,
   "baseType": "Girded Tower Shield",
   "itemClass": 3,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 4.84,
     "data": [
       0,
-      -1.06,
-      -1.43,
-      -0.49,
-      -0.62,
-      -0.63,
-      -0.61
-    ],
-    "totalChange": -0.61
+      6.23,
+      -5.64,
+      -11.65,
+      -9.64,
+      -6.98,
+      4.84
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 4.84,
     "data": [
       0,
-      -1.06,
-      -1.43,
-      -0.49,
-      -0.62,
-      -0.63,
-      -0.61
-    ],
-    "totalChange": -0.61
+      6.23,
+      -5.64,
+      -11.65,
+      -9.64,
+      -6.98,
+      4.84
+    ]
   },
   "implicitModifiers": [
     {
@@ -1494,23 +1502,24 @@ League: Mercenaries
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "The priests found the Great Shield the night it fell to Middengard,\nbut it was the smiths who delved into the secrets it held.",
   "itemType": "Shield",
-  "chaosValue": 16058.40,
-  "exaltedValue": 663.84,
-  "divineValue": 120.00,
-  "count": 272,
+  "chaosValue": 6918,
+  "exaltedValue": 780.8,
+  "divineValue": 60.00,
+  "count": 160,
   "detailsId": "svalinn-girded-tower-shield",
   "tradeInfo": [],
-  "listingCount": 553
+  "listingCount": 160
 }
 ```
 
 ## UniqueAccessory (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 268
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueAccessory`
+**Items Count:** 333
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=UniqueAccessory`
 
 ### Field Schema
 
@@ -1531,9 +1540,10 @@ League: Mercenaries
 | `itemType` | string | No | Descriptive item type category |
 | `levelRequired` | number | No | Minimum character level required to use the item |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to UniqueAccessory endpoint |
+| `mutatedModifiers` | array | No | Field specific to UniqueAccessory endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to UniqueAccessory endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
@@ -1546,33 +1556,33 @@ League: Mercenaries
   "levelRequired": 52,
   "baseType": "Amethyst Ring",
   "itemClass": 3,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 71.80,
     "data": [
       0,
-      2.22,
-      6.52,
-      8.08,
-      5.41,
-      9.14,
-      9.37
-    ],
-    "totalChange": 9.37
+      -2.66,
+      13.83,
+      27.40,
+      74.95,
+      61.86,
+      71.80
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 71.80,
     "data": [
       0,
-      2.22,
-      6.52,
-      8.08,
-      5.41,
-      9.14,
-      9.37
-    ],
-    "totalChange": 9.37
+      -2.66,
+      13.83,
+      27.40,
+      74.95,
+      61.86,
+      71.80
+    ]
   },
   "implicitModifiers": [
     {
-      "text": "+(17-27)% to Chaos Resistance",
+      "text": "+(20-27)% to Chaos Resistance",
       "optional": false
     }
   ],
@@ -1586,23 +1596,24 @@ League: Mercenaries
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "Innocence rose to godhood not on inspired faith,\nbut on the vilification and hatred of another.",
   "itemType": "Ring",
-  "chaosValue": 213559.07,
-  "exaltedValue": 8828.40,
-  "divineValue": 1595.87,
-  "count": 28,
+  "chaosValue": 62343,
+  "exaltedValue": 7036,
+  "divineValue": 540.7,
+  "count": 12,
   "detailsId": "original-sin-amethyst-ring",
   "tradeInfo": [],
-  "listingCount": 50
+  "listingCount": 12
 }
 ```
 
 ## Beast (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 203
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Beast`
+**Items Count:** 215
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Beast`
 
 ### Field Schema
 
@@ -1621,54 +1632,48 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Beast endpoint |
+| `mutatedModifiers` | array | No | Field specific to Beast endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Beast endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
 
 ```json
 {
-  "id": 121387,
-  "name": "Black Mórrigan",
+  "id": 20337,
+  "name": "Mutant Arach",
   "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQmVzdGlhcnlPcmJGdWxsIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/3214b44360/BestiaryOrbFull.png",
-  "baseType": "Goliaths|Unnaturals|The Wilds",
+  "baseType": "Spiders|Arachnids|The Caverns",
   "itemClass": 2,
-  "sparkline": {
-    "data": [
-      0,
-      0.36,
-      1.17,
-      1.18,
-      1.16,
-      1.15,
-      -2.13
-    ],
-    "totalChange": -2.13
+  "sparkLine": {
+    "totalChange": 0,
+    "data": []
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": -7.02,
     "data": [
       0,
-      0.36,
-      1.17,
-      1.18,
-      1.16,
-      1.15,
-      -2.13
-    ],
-    "totalChange": -2.13
+      -3.55,
+      -59.02,
+      -59.81,
+      -71.77,
+      -10.28,
+      -7.02
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 388.34,
-  "exaltedValue": 16.01,
-  "divineValue": 2.90,
-  "count": 399,
-  "detailsId": "black-morrigan",
+  "chaosValue": 115.3,
+  "exaltedValue": 13.01,
+  "divineValue": 1.00,
+  "count": 3,
+  "detailsId": "mutant-arach",
   "tradeInfo": [],
-  "listingCount": 6217
+  "listingCount": 3
 }
 ```
 
@@ -1676,19 +1681,19 @@ League: Mercenaries
 
 **Status:** ❌ Deprecated/Empty
 **Items Count:** 0
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Prophecy`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Prophecy`
 
 ## Watchstone (itemoverview)
 
 **Status:** ❌ Deprecated/Empty
 **Items Count:** 0
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Watchstone`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Watchstone`
 
 ## Vial (itemoverview)
 
 **Status:** ✅ Working
 **Items Count:** 9
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Vial`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Vial`
 
 ### Field Schema
 
@@ -1707,9 +1712,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Vial endpoint |
+| `mutatedModifiers` | array | No | Field specific to Vial endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Vial endpoint |
 | `stackSize` | number | No | Field specific to Vial endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -1717,54 +1723,55 @@ League: Mercenaries
 
 ```json
 {
-  "id": 39826,
-  "name": "Vial of the Ghost",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVmlhbFNvdWxDYXRjaGVyIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/41cbc9ed1d/VialSoulCatcher.png",
-  "baseType": "Vial of the Ghost",
+  "id": 39824,
+  "name": "Vial of Summoning",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvVmlhbFNwaXJpdERyaW5rZXIiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/b4c71ef906/VialSpiritDrinker.png",
+  "baseType": "Vial of Summoning",
   "stackSize": 10,
   "itemClass": 5,
-  "sparkline": {
-    "data": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      0
-    ],
-    "totalChange": 0
-  },
-  "lowConfidenceSparkline": {
+  "sparkLine": {
+    "totalChange": -3.74,
     "data": [
       0,
-      -0.61,
-      -1.01,
-      -0.81,
-      4.81,
-      -1.02,
-      10.72
-    ],
-    "totalChange": 10.72
+      -1.48,
+      -4.02,
+      38.88,
+      29.26,
+      22.46,
+      -3.74
+    ]
+  },
+  "lowConfidenceSparkLine": {
+    "totalChange": -3.74,
+    "data": [
+      0,
+      -1.48,
+      -4.02,
+      38.88,
+      29.26,
+      22.46,
+      -3.74
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
-  "flavourText": "With great tragedy and power,\nthe dead are netted in anguish.",
-  "chaosValue": 508.86,
-  "exaltedValue": 20.98,
-  "divineValue": 3.80,
-  "count": 5,
-  "detailsId": "vial-of-the-ghost",
+  "mutatedModifiers": [],
+  "flavourText": "Call to place the demon gods of the past.",
+  "chaosValue": 1047,
+  "exaltedValue": 118.2,
+  "divineValue": 9.08,
+  "count": 76,
+  "detailsId": "vial-of-summoning",
   "tradeInfo": [],
-  "listingCount": 17
+  "listingCount": 76
 }
 ```
 
 ## DeliriumOrb (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 17
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=DeliriumOrb`
+**Items Count:** 16
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=DeliriumOrb`
 
 ### Field Schema
 
@@ -1783,9 +1790,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to DeliriumOrb endpoint |
+| `mutatedModifiers` | array | No | Field specific to DeliriumOrb endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to DeliriumOrb endpoint |
 | `stackSize` | number | No | Field specific to DeliriumOrb endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
@@ -1793,51 +1801,52 @@ League: Mercenaries
 
 ```json
 {
-  "id": 40904,
-  "name": "Fragmented Delirium Orb",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsaXJpdW0vRGVsaXJpdW1PcmJGcmFnbWVudHMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/8f24162984/DeliriumOrbFragments.png",
-  "baseType": "Fragmented Delirium Orb",
+  "id": 40905,
+  "name": "Cartographer's Delirium Orb",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvRGVsaXJpdW0vRGVsaXJpdW1PcmJNYXBzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/ad4a59a2fc/DeliriumOrbMaps.png",
+  "baseType": "Cartographer's Delirium Orb",
   "stackSize": 10,
   "itemClass": 5,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 25,
     "data": [
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "totalChange": 0
+      10,
+      25,
+      25,
+      25,
+      25,
+      25
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 25,
     "data": [
       0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    "totalChange": 0
+      10,
+      25,
+      25,
+      25,
+      25,
+      25
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
     {
-      "text": "Modifies a Map item adding layers of Delirium with the Fragments reward type",
+      "text": "Modifies a Map item adding layers of Delirium with the Map Items reward type",
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 20.00,
-  "exaltedValue": 0.82,
-  "divineValue": 0.15,
-  "count": 160,
-  "detailsId": "fragmented-delirium-orb",
+  "chaosValue": 5.00,
+  "exaltedValue": 0.56,
+  "divineValue": 0.04,
+  "count": 311,
+  "detailsId": "cartographers-delirium-orb",
   "tradeInfo": [],
-  "listingCount": 582
+  "listingCount": 358
 }
 ```
 
@@ -1845,7 +1854,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 12
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Omen`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Omen`
 
 ### Field Schema
 
@@ -1864,9 +1873,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to Omen endpoint |
+| `mutatedModifiers` | array | No | Field specific to Omen endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to Omen endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
@@ -1878,29 +1888,29 @@ League: Mercenaries
   "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQXptZXJpL1Zvb2Rvb09tZW5zMVB1cnBsZSIsInciOjEsImgiOjEsInNjYWxlIjoxfV0/68c64f2338/VoodooOmens1Purple.png",
   "baseType": "Omen of Fortune",
   "itemClass": 5,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": -25.93,
     "data": [
       0,
-      -5.13,
-      -6.58,
-      -5.90,
-      -1.96,
-      -1.68,
-      7.02
-    ],
-    "totalChange": 7.02
+      1.02,
+      -1.25,
+      -18.81,
+      -25.68,
+      -28.31,
+      -25.93
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": -25.93,
     "data": [
       0,
-      -5.13,
-      -6.58,
-      -5.90,
-      -1.96,
-      -1.68,
-      7.02
-    ],
-    "totalChange": 7.02
+      1.02,
+      -1.25,
+      -18.81,
+      -25.68,
+      -28.31,
+      -25.93
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
@@ -1909,14 +1919,15 @@ League: Mercenaries
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 5825.08,
-  "exaltedValue": 240.11,
-  "divineValue": 43.50,
-  "count": 19,
+  "chaosValue": 691.8,
+  "exaltedValue": 78.08,
+  "divineValue": 6.00,
+  "count": 10,
   "detailsId": "omen-of-fortune",
   "tradeInfo": [],
-  "listingCount": 42
+  "listingCount": 10
 }
 ```
 
@@ -1924,7 +1935,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 12
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=UniqueRelic`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=UniqueRelic`
 
 ### Field Schema
 
@@ -1943,9 +1954,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to UniqueRelic endpoint |
+| `mutatedModifiers` | array | No | Field specific to UniqueRelic endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to UniqueRelic endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 
 ### Sample Response
@@ -1957,29 +1969,29 @@ League: Mercenaries
   "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmVsaWNzL1JlbGljVW5pcXVlNHgxIiwidyI6NCwiaCI6MSwic2NhbGUiOjF9XQ/e6e8bfb6e4/RelicUnique4x1.png",
   "baseType": "Papyrus Relic",
   "itemClass": 3,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 63.12,
     "data": [
       0,
-      1.30,
-      0.66,
-      4.47,
-      4.28,
-      3.93,
-      3.64
-    ],
-    "totalChange": 3.64
+      0.70,
+      18.11,
+      19.76,
+      88.00,
+      63.12,
+      null
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 97.66,
     "data": [
       0,
-      1.30,
-      0.66,
-      4.47,
-      4.28,
-      3.93,
-      3.64
-    ],
-    "totalChange": 3.64
+      0.70,
+      18.11,
+      19.76,
+      88.00,
+      63.12,
+      97.66
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
@@ -2004,14 +2016,15 @@ League: Mercenaries
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "\"It's all here. The lie at the core of my faith. Maxarius was not the first chosen of Innocence. Maxarius was Innocence himself. A charlatan, a liar, and a power-seeker.\" - Lycia, the Heretic",
-  "chaosValue": 179342.23,
-  "exaltedValue": 7392.51,
-  "divineValue": 1339.27,
-  "count": 7,
+  "chaosValue": 65779,
+  "exaltedValue": 7424,
+  "divineValue": 570.5,
+  "count": 2,
   "detailsId": "the-original-scripture-relic",
   "tradeInfo": [],
-  "listingCount": 11
+  "listingCount": 2
 }
 ```
 
@@ -2019,7 +2032,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 850
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=ClusterJewel`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=ClusterJewel`
 
 ### Field Schema
 
@@ -2039,9 +2052,10 @@ League: Mercenaries
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `levelRequired` | number | No | Minimum character level required to use the item |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to ClusterJewel endpoint |
+| `mutatedModifiers` | array | No | Field specific to ClusterJewel endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to ClusterJewel endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 | `variant` | string | No | Field specific to ClusterJewel endpoint |
 
@@ -2049,67 +2063,68 @@ League: Mercenaries
 
 ```json
 {
-  "id": 63569,
-  "name": "12% increased Fire Damage",
+  "id": 64014,
+  "name": "Claw Attacks deal 12% increased Damage with Hits and Ailments, Dagger Attacks deal 12% increased Damage with Hits and Ailments",
   "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvSmV3ZWxzL05ld0dlbUJhc2UzIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/db35e60885/NewGemBase3.png",
-  "levelRequired": 50,
+  "levelRequired": 84,
   "baseType": "Large Cluster Jewel",
-  "variant": "8 passives",
-  "itemClass": 1,
-  "sparkline": {
+  "variant": "12 passives",
+  "itemClass": 2,
+  "sparkLine": {
+    "totalChange": 13.13,
     "data": [
       0,
-      -4.29,
-      -8.51,
-      -20.8,
-      -18.07,
-      -34.26,
-      -2.98
-    ],
-    "totalChange": -2.98
+      16.52,
+      10.29,
+      2.85,
+      -1.88,
+      -10.06,
+      13.13
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 13.13,
     "data": [
       0,
-      -4.29,
-      -8.51,
-      -20.8,
-      -18.07,
-      -34.26,
-      -2.98
-    ],
-    "totalChange": -2.98
+      16.52,
+      10.29,
+      2.85,
+      -1.88,
+      -10.06,
+      13.13
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 950.76,
-  "exaltedValue": 39.19,
-  "divineValue": 7.10,
-  "count": 24,
-  "detailsId": "12-increased-fire-damage-8-passives-50",
+  "chaosValue": 691.8,
+  "exaltedValue": 78.08,
+  "divineValue": 6.00,
+  "count": 399,
+  "detailsId": "claw-attacks-deal-12-increased-damage-with-hits-and-ailments-dagger-attacks-deal-12-increased-damage-with-hits-and-ailments-12-passives-84",
   "tradeInfo": [
     {
       "mod": "enchant.stat_3948993189",
       "min": 0,
       "max": 0,
-      "option": "13"
+      "option": "3"
     },
     {
       "mod": "enchant.stat_3086156145",
-      "min": 8,
-      "max": 8
+      "min": 12,
+      "max": 12
     }
   ],
-  "listingCount": 103
+  "listingCount": 690
 }
 ```
 
 ## BlightedMap (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 371
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=BlightedMap`
+**Items Count:** 405
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=BlightedMap`
 
 ### Field Schema
 
@@ -2128,10 +2143,11 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to BlightedMap endpoint |
 | `mapTier` | number | No | Field specific to BlightedMap endpoint |
+| `mutatedModifiers` | array | No | Field specific to BlightedMap endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to BlightedMap endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 | `variant` | string | No | Field specific to BlightedMap endpoint |
 
@@ -2139,47 +2155,48 @@ League: Mercenaries
 
 ```json
 {
-  "id": 125726,
-  "name": "Blighted Frozen Cabins Map",
-  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9BdGxhczJNYXBzL05ldy9Gcm96ZW5DYWJpbnMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwibW4iOjIyLCJtdCI6MTYsIm1iIjp0cnVlfV0/ae202932ce/FrozenCabins.png",
-  "mapTier": 16,
-  "baseType": "Blighted Frozen Cabins Map",
-  "variant": ", Gen-22",
-  "itemClass": 0,
-  "sparkline": {
-    "data": [],
-    "totalChange": 0
+  "id": 129788,
+  "name": "Blighted Lava Lake Map",
+  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9BdGxhczJNYXBzL05ldy9Db3Jwc2UiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwibW4iOjIzLCJtdCI6MTAsIm1iIjp0cnVlfV0/0f03db9200/Corpse.png",
+  "mapTier": 10,
+  "baseType": "Blighted Lava Lake Map",
+  "variant": ", Gen-23",
+  "itemClass": 2,
+  "sparkLine": {
+    "totalChange": 0,
+    "data": []
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": -4.87,
     "data": [
       0,
-      -1.26,
-      -1.65,
-      -1.48,
-      -1.65,
-      -1.66,
-      -1.57
-    ],
-    "totalChange": -1.57
+      -1.32,
+      -4.87,
+      -9.90,
+      -10.44,
+      -7.92,
+      -4.87
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 401.73,
-  "exaltedValue": 16.56,
-  "divineValue": 3.00,
+  "chaosValue": 115.3,
+  "exaltedValue": 13.01,
+  "divineValue": 1.00,
   "count": 1,
-  "detailsId": "blighted-frozen-cabins-map-t16-gen-22",
+  "detailsId": "blighted-lava-lake-map-t10-gen-23",
   "tradeInfo": [],
-  "listingCount": 9
+  "listingCount": 1
 }
 ```
 
 ## BlightRavagedMap (itemoverview)
 
 **Status:** ✅ Working
-**Items Count:** 132
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=BlightRavagedMap`
+**Items Count:** 133
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=BlightRavagedMap`
 
 ### Field Schema
 
@@ -2198,10 +2215,11 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to BlightRavagedMap endpoint |
 | `mapTier` | number | No | Field specific to BlightRavagedMap endpoint |
+| `mutatedModifiers` | array | No | Field specific to BlightRavagedMap endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to BlightRavagedMap endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
 | `variant` | string | No | Field specific to BlightRavagedMap endpoint |
 
@@ -2209,47 +2227,40 @@ League: Mercenaries
 
 ```json
 {
-  "id": 125731,
-  "name": "Blight-ravaged Museum Map",
-  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9BdGxhczJNYXBzL05ldy9NdXNldW0iLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MSwibW4iOjIyLCJtdCI6MTUsIm11YiI6dHJ1ZX1d/dac8ed1913/Museum.png",
+  "id": 129565,
+  "name": "Blight-ravaged Racecourse Map",
+  "icon": "https://web.poecdn.com/gen/image/WzI4LDE0LHsiZiI6IjJESXRlbXMvTWFwcy9BdGxhczJNYXBzL05ldy9SYWNlY291cnNlIiwidyI6MSwiaCI6MSwic2NhbGUiOjEsIm1uIjoyMywibXQiOjE1LCJtdWIiOnRydWV9XQ/232c7a87f6/Racecourse.png",
   "mapTier": 15,
-  "baseType": "Blight-ravaged Museum Map",
-  "variant": ", Gen-22",
-  "itemClass": 0,
-  "sparkline": {
-    "data": [
-      0,
-      0,
-      null,
-      null,
-      null,
-      null,
-      null
-    ],
-    "totalChange": 0
+  "baseType": "Blight-ravaged Racecourse Map",
+  "variant": ", Gen-23",
+  "itemClass": 2,
+  "sparkLine": {
+    "totalChange": 0,
+    "data": []
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 700,
     "data": [
       0,
-      0,
-      -16.28,
-      -16.28,
-      -20.93,
-      -2.33,
-      14.86
-    ],
-    "totalChange": 14.86
+      900,
+      null,
+      3,
+      32,
+      32,
+      700
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 49.39,
-  "exaltedValue": 2.04,
-  "divineValue": 0.37,
-  "count": 2,
-  "detailsId": "blight-ravaged-museum-map-t15-gen-22",
+  "chaosValue": 80.00,
+  "exaltedValue": 9.03,
+  "divineValue": 0.69,
+  "count": 1,
+  "detailsId": "blight-ravaged-racecourse-map-t15-gen-23",
   "tradeInfo": [],
-  "listingCount": 24
+  "listingCount": 1
 }
 ```
 
@@ -2257,7 +2268,7 @@ League: Mercenaries
 
 **Status:** ✅ Working
 **Items Count:** 4
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Invitation`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Invitation`
 
 ### Field Schema
 
@@ -2276,54 +2287,56 @@ League: Mercenaries
 | `implicitModifiers` | array | Yes | Array of implicit item modifiers |
 | `itemClass` | number | Yes | Numeric identifier for the item class category |
 | `listingCount` | number | Yes | Number of active trade listings |
-| `lowConfidenceSparkline` | object | Yes | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | Yes | Field specific to Invitation endpoint |
+| `mutatedModifiers` | array | Yes | Field specific to Invitation endpoint |
 | `name` | string | Yes | Display name of the item |
-| `sparkline` | object | Yes | Price trend data over time |
+| `sparkLine` | object | Yes | Field specific to Invitation endpoint |
 | `tradeInfo` | array | Yes | Additional trading information and metadata |
 
 ### Sample Response
 
 ```json
 {
-  "id": 93816,
-  "name": "Screaming Invitation",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9UYW5nbGVkT3JiUXVlc3Q1IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/75de691c2b/TangledOrbQuest5.png",
-  "baseType": "Screaming Invitation",
+  "id": 93814,
+  "name": "Incandescent Invitation",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUXVlc3RJdGVtcy9DbGVhbnNpbmdGaXJlT3JiUXVlc3Q1IiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/e6f9234053/CleansingFireOrbQuest5.png",
+  "baseType": "Incandescent Invitation",
   "itemClass": 0,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": 42.62,
     "data": [
       0,
-      3.18,
-      23.71,
-      15.08,
-      -4.34,
-      13.15,
-      1.03
-    ],
-    "totalChange": 1.03
+      4.64,
+      -1.05,
+      5.14,
+      5.14,
+      23.69,
+      42.62
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": 42.62,
     "data": [
       0,
-      3.18,
-      23.71,
-      15.08,
-      -4.34,
-      13.15,
-      1.03
-    ],
-    "totalChange": 1.03
+      4.64,
+      -1.05,
+      5.14,
+      5.14,
+      23.69,
+      42.62
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [],
-  "flavourText": "From the heart of the Tangle, the Eater of Worlds\nreaches out for control of the Atlas.",
-  "chaosValue": 117.50,
-  "exaltedValue": 4.84,
-  "divineValue": 0.88,
+  "mutatedModifiers": [],
+  "flavourText": "From the corona of an ancient star,\nthe Searing Exarch seeks to master the Atlas.",
+  "chaosValue": 115.3,
+  "exaltedValue": 13.01,
+  "divineValue": 1.00,
   "count": 399,
-  "detailsId": "screaming-invitation",
+  "detailsId": "incandescent-invitation",
   "tradeInfo": [],
-  "listingCount": 7336
+  "listingCount": 1454
 }
 ```
 
@@ -2331,19 +2344,19 @@ League: Mercenaries
 
 **Status:** ❌ Deprecated/Empty
 **Items Count:** 0
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Memory`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Memory`
 
 ## Coffin (itemoverview)
 
 **Status:** ❌ Deprecated/Empty
 **Items Count:** 0
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=Coffin`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=Coffin`
 
 ## AllflameEmber (itemoverview)
 
 **Status:** ✅ Working
 **Items Count:** 8
-**URL:** `https://poe.ninja/api/data/itemoverview?league=Mercenaries&type=AllflameEmber`
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=AllflameEmber`
 
 ### Field Schema
 
@@ -2362,9 +2375,10 @@ League: Mercenaries
 | `implicitModifiers` | array | No | Array of implicit item modifiers |
 | `itemClass` | number | No | Numeric identifier for the item class category |
 | `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkline` | object | No | Price trend data with low confidence indicators |
+| `lowConfidenceSparkLine` | object | No | Field specific to AllflameEmber endpoint |
+| `mutatedModifiers` | array | No | Field specific to AllflameEmber endpoint |
 | `name` | string | No | Display name of the item |
-| `sparkline` | object | No | Price trend data over time |
+| `sparkLine` | object | No | Field specific to AllflameEmber endpoint |
 | `stackSize` | number | No | Field specific to AllflameEmber endpoint |
 | `tradeFilter` | object | No | Field specific to AllflameEmber endpoint |
 | `tradeInfo` | array | No | Additional trading information and metadata |
@@ -2373,68 +2387,64 @@ League: Mercenaries
 
 ```json
 {
-  "id": 125020,
-  "name": "Allflame Ember of the Gilded",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvTmVjcm9wb2xpcy9BbGxmbGFtZUdvbGQiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/dd5c297fac/AllflameGold.png",
-  "baseType": "Allflame Ember of the Gilded",
+  "id": 128155,
+  "name": "Allflame Ember of the Ethereal",
+  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvTmVjcm9wb2xpcy9BbGxmbGFtZUNsZWFuc2VkIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d59cc529d3/AllflameCleansed.png",
+  "baseType": "Allflame Ember of the Ethereal",
   "stackSize": 20,
   "itemClass": 0,
-  "sparkline": {
+  "sparkLine": {
+    "totalChange": -0.13,
     "data": [
       0,
-      -0.40,
-      -1.67,
-      -1.50,
-      -1.68,
-      -4.96,
-      -8.13
-    ],
-    "totalChange": -8.13
+      -3.31,
+      -3.34,
+      -5.42,
+      -5.94,
+      -3.34,
+      -0.13
+    ]
   },
-  "lowConfidenceSparkline": {
+  "lowConfidenceSparkLine": {
+    "totalChange": -0.13,
     "data": [
       0,
-      -0.40,
-      -1.67,
-      -1.50,
-      -1.68,
-      -4.96,
-      -8.13
-    ],
-    "totalChange": -8.13
+      -3.31,
+      -3.34,
+      -5.42,
+      -5.94,
+      -3.34,
+      -0.13
+    ]
   },
   "implicitModifiers": [],
   "explicitModifiers": [
     {
-      "text": "Substitutes Monster Packs in Area\nPack Monster Equipment Drops are converted to Gold",
+      "text": "Substitutes Monster Packs in Area\nPack Monsters cannot drop\nEquipment, Flasks or Tinctures",
       "optional": false
     }
   ],
+  "mutatedModifiers": [],
   "flavourText": "",
-  "chaosValue": 375.06,
-  "exaltedValue": 15.45,
-  "divineValue": 2.80,
-  "count": 399,
-  "detailsId": "allflame-ember-of-the-gilded-(0-0)",
+  "chaosValue": 173.0,
+  "exaltedValue": 19.52,
+  "divineValue": 1.50,
+  "count": 143,
+  "detailsId": "allflame-ember-of-the-ethereal",
   "tradeInfo": [],
   "tradeFilter": {
     "query": {
       "type": {
-        "option": "Allflame Ember of the Gilded"
+        "option": "Allflame Ember of the Ethereal"
       },
       "filters": {
         "misc_filters": {
-          "filters": {
-            "ilvl": {
-              "min": 0,
-              "max": 0
-            }
-          }
+          "filters": {}
         }
       }
     }
   },
-  "listingCount": 1893
+  "listingCount": 147
 }
 ```
 

@@ -3,7 +3,7 @@
 # API Schema Analysis Script for poe.ninja
 # Automatically analyzes all endpoints to document field types, nullable fields, and relationships
 
-LEAGUE="Mercenaries"
+LEAGUE="Keepers"
 OUTPUT_FILE="api_schema_analysis.md"
 
 # Color codes for output
@@ -24,12 +24,24 @@ echo "" >> $OUTPUT_FILE
 analyze_endpoint() {
     local overview_type=$1
     local endpoint_type=$2
-    local url="https://poe.ninja/api/data/${overview_type}?league=${LEAGUE}&type=${endpoint_type}"
+    local base_url=""
+    case "$overview_type" in
+        "currencyoverview")
+            base_url="https://poe.ninja/poe1/api/economy/stash/current/currency/overview"
+            ;;
+        "itemoverview")
+            base_url="https://poe.ninja/poe1/api/economy/stash/current/item/overview"
+            ;;
+        *)
+            base_url="https://poe.ninja/poe1/api/economy/stash/current/item/overview"
+            ;;
+    esac
+    local url="${base_url}?league=${LEAGUE}&type=${endpoint_type}"
     
     echo -e "${BLUE}Analyzing: ${endpoint_type} (${overview_type})${NC}"
     
     # Get response
-    response=$(curl -s "$url")
+    response=$(curl -s -L "$url")
     
     # Check if response is valid
     if echo "$response" | jq empty 2>/dev/null; then
