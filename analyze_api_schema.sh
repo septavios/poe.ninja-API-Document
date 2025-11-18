@@ -161,6 +161,45 @@ generate_field_description() {
     esac
 }
 
+# Function to analyze dense overviews
+analyze_dense_overviews() {
+    local url="https://poe.ninja/poe1/api/economy/stash/current/dense/overviews?league=${LEAGUE}"
+    echo -e "${BLUE}Analyzing: Dense Overviews${NC}"
+    response=$(curl -s -L "$url")
+    if echo "$response" | jq empty 2>/dev/null; then
+        echo "## Dense Overviews" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo "**URL:** \`$url\`" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        local ccount=$(echo "$response" | jq '.currencyOverviews | length')
+        local icount=$(echo "$response" | jq '.itemOverviews | length')
+        echo "**Currency Types:** $ccount" >> $OUTPUT_FILE
+        echo "**Item Types:** $icount" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo "### Types" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo "- Currency: $(echo "$response" | jq -r '.currencyOverviews[].type' | tr '\n' ',' | sed 's/,$//')" >> $OUTPUT_FILE
+        echo "- Item: $(echo "$response" | jq -r '.itemOverviews[].type' | tr '\n' ',' | sed 's/,$//')" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo "### Sample Response (Currency: first type)" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo "\`\`\`json" >> $OUTPUT_FILE
+        echo "$response" | jq '.currencyOverviews[0]' >> $OUTPUT_FILE
+        echo "\`\`\`" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo "### Sample Response (Item: first type)" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo "\`\`\`json" >> $OUTPUT_FILE
+        echo "$response" | jq '.itemOverviews[0]' >> $OUTPUT_FILE
+        echo "\`\`\`" >> $OUTPUT_FILE
+        echo "" >> $OUTPUT_FILE
+        echo -e "${GREEN}✓ Dense overviews documented${NC}"
+    else
+        echo -e "${RED}✗ Failed to get valid JSON for dense overviews${NC}"
+    fi
+    echo ""
+}
+
 # Currency overview endpoints
 echo "=== Analyzing currencyoverview endpoints ==="
 analyze_endpoint "currencyoverview" "Currency"
@@ -199,6 +238,9 @@ analyze_endpoint "itemoverview" "Invitation"
 analyze_endpoint "itemoverview" "Memory"
 analyze_endpoint "itemoverview" "Coffin"
 analyze_endpoint "itemoverview" "AllflameEmber"
+
+# Dense overviews section
+analyze_dense_overviews
 
 # Add field relationships section
 echo "# Field Relationships & Common Patterns" >> $OUTPUT_FILE

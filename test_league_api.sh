@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# Script to test all poe.ninja API endpoints for Mercenaries league
-# Usage: ./test_mercenaries_api.sh
+# Script to test poe.ninja API endpoints for Keepers league
+# Usage: ./test_league_api.sh
 
-LEAGUE="Mercenaries"
-BASE_URL="https://poe.ninja/api/data"
+LEAGUE="Keepers"
+CURRENCY_BASE="https://poe.ninja/poe1/api/economy/stash/current/currency/overview"
+ITEM_BASE="https://poe.ninja/poe1/api/economy/stash/current/item/overview"
 FAILED_ENDPOINTS=()
 SUCCESS_ENDPOINTS=()
 FIELD_ISSUES=()
@@ -69,10 +70,7 @@ validate_item_json() {
                 fi
                 ;;
             "UniqueWeapon"|"UniqueArmour"|"UniqueAccessory")
-                if ! echo "$response" | jq -e '.lines[0] | has("links")' > /dev/null 2>&1; then
-                    FIELD_ISSUES+=("$data_type: Missing field 'links'")
-                    return 1
-                fi
+                # 'links' is optional in Keepers; skip strict validation
                 ;;
             "Map")
                 if ! echo "$response" | jq -e '.lines[0] | has("mapTier")' > /dev/null 2>&1; then
@@ -89,12 +87,18 @@ validate_item_json() {
 test_endpoint() {
     local endpoint_type=$1
     local data_type=$2
-    local url="${BASE_URL}/${endpoint_type}?league=${LEAGUE}&type=${data_type}"
+    local base_url=""
+    if [ "$endpoint_type" = "currencyoverview" ]; then
+        base_url="$CURRENCY_BASE"
+    else
+        base_url="$ITEM_BASE"
+    fi
+    local url="${base_url}?league=${LEAGUE}&type=${data_type}"
     
     echo -n "Testing ${data_type} (${endpoint_type})... "
     
     # Make the API call and check if it returns valid JSON with data
-    response=$(curl -s "$url")
+    response=$(curl -s -L "$url")
     
     if [ $? -eq 0 ] && echo "$response" | jq -e '.lines | length' > /dev/null 2>&1; then
         count=$(echo "$response" | jq '.lines | length')
@@ -120,6 +124,28 @@ test_endpoint() {
     else
         echo "✗ FAILED (No response or invalid JSON)"
         FAILED_ENDPOINTS+=("$data_type")
+    fi
+}
+
+# Test dense overviews endpoint
+test_dense_overviews() {
+    local url="https://poe.ninja/poe1/api/economy/stash/current/dense/overviews?league=${LEAGUE}"
+    echo -n "Testing Dense Overviews... "
+    response=$(curl -s -L "$url")
+    if [ $? -eq 0 ] && echo "$response" | jq -e '.currencyOverviews and .itemOverviews' > /dev/null 2>&1; then
+        local ccount=$(echo "$response" | jq '.currencyOverviews | length')
+        local icount=$(echo "$response" | jq '.itemOverviews | length')
+        if echo "$response" | jq -e '.currencyOverviews[0].type and .currencyOverviews[0].lines' > /dev/null 2>&1 \
+           && echo "$response" | jq -e '.itemOverviews[0].type and .itemOverviews[0].lines' > /dev/null 2>&1; then
+            echo "✓ SUCCESS (currency: $ccount types, item: $icount types)"
+            SUCCESS_ENDPOINTS+=("DenseOverviews")
+        else
+            echo "⚠ PARTIAL (Structure issues in entries)"
+            FAILED_ENDPOINTS+=("DenseOverviews")
+        fi
+    else
+        echo "✗ FAILED (No response or invalid JSON)"
+        FAILED_ENDPOINTS+=("DenseOverviews")
     fi
 }
 
@@ -162,6 +188,9 @@ test_endpoint "itemoverview" "Invitation"
 test_endpoint "itemoverview" "Memory"
 test_endpoint "itemoverview" "Coffin"
 test_endpoint "itemoverview" "AllflameEmber"
+
+# Dense overviews
+test_dense_overviews
 
 echo ""
 echo "================================================"

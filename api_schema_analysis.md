@@ -1,6 +1,6 @@
 # poe.ninja API Schema Documentation
 
-Generated on: Tue Nov 18 23:32:45 +08 2025
+Generated on: Tue Nov 18 23:44:44 +08 2025
 League: Keepers
 
 ## Currency (currencyoverview)
@@ -807,97 +807,6 @@ League: Keepers
   "detailsId": "the-emptiness",
   "tradeInfo": [],
   "listingCount": 2
-}
-```
-
-## SkillGem (itemoverview)
-
-**Status:** ✅ Working
-**Items Count:** 7178
-**URL:** `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=Keepers&type=SkillGem`
-
-### Field Schema
-
-| Field Name | Data Type | Nullable | Description |
-|------------|-----------|----------|-------------|
-| `baseType` | string | No | Base item type name |
-| `chaosValue` | number | No | Current market value in Chaos Orbs |
-| `corrupted` | boolean | Yes | Field specific to SkillGem endpoint |
-| `count` | number | No | Number of items available in the market |
-| `detailsId` | string | No | Unique identifier for detailed item information |
-| `divineValue` | number | No | Current market value in Divine Orbs |
-| `exaltedValue` | number | No | Current market value in Exalted Orbs |
-| `explicitModifiers` | array | No | Array of explicit item modifiers |
-| `flavourText` | string | No | Lore text associated with the item |
-| `gemLevel` | number | No | Field specific to SkillGem endpoint |
-| `gemQuality` | number | Yes | Field specific to SkillGem endpoint |
-| `icon` | string | No | URL to the item's icon image |
-| `id` | number | No | Unique identifier for the item |
-| `implicitModifiers` | array | No | Array of implicit item modifiers |
-| `itemClass` | number | No | Numeric identifier for the item class category |
-| `levelRequired` | number | No | Minimum character level required to use the item |
-| `listingCount` | number | No | Number of active trade listings |
-| `lowConfidenceSparkLine` | object | No | Field specific to SkillGem endpoint |
-| `mutatedModifiers` | array | No | Field specific to SkillGem endpoint |
-| `name` | string | No | Display name of the item |
-| `sparkLine` | object | No | Field specific to SkillGem endpoint |
-| `tradeInfo` | array | No | Additional trading information and metadata |
-| `variant` | string | No | Field specific to SkillGem endpoint |
-
-### Sample Response
-
-```json
-{
-  "id": 96363,
-  "name": "Awakened Enlighten Support",
-  "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvR2Vtcy9TdXBwb3J0L1N1cHBvcnRQbHVzL0VubGlnaHRlbnBsdXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/7ec7d0544d/Enlightenplus.png",
-  "levelRequired": 80,
-  "baseType": "Awakened Enlighten Support",
-  "variant": "5/20c",
-  "itemClass": 4,
-  "sparkLine": {
-    "totalChange": 17.94,
-    "data": [
-      null,
-      null,
-      0,
-      null,
-      null,
-      17.94,
-      null
-    ]
-  },
-  "lowConfidenceSparkLine": {
-    "totalChange": -13.69,
-    "data": [
-      0,
-      -9.28,
-      -16.24,
-      -20.51,
-      -18.07,
-      -1.21,
-      -13.69
-    ]
-  },
-  "implicitModifiers": [],
-  "explicitModifiers": [
-    {
-      "text": "This Gem gains 100% increased Experience",
-      "optional": false
-    }
-  ],
-  "mutatedModifiers": [],
-  "flavourText": "",
-  "corrupted": true,
-  "gemLevel": 5,
-  "gemQuality": 20,
-  "chaosValue": 86303,
-  "exaltedValue": 9741,
-  "divineValue": 748.5,
-  "count": 3,
-  "detailsId": "awakened-enlighten-support-5-20c",
-  "tradeInfo": [],
-  "listingCount": 3
 }
 ```
 
@@ -2445,6 +2354,1506 @@ League: Keepers
     }
   },
   "listingCount": 147
+}
+```
+
+## Dense Overviews
+
+**URL:** `https://poe.ninja/poe1/api/economy/stash/current/dense/overviews?league=Keepers`
+
+**Currency Types:** 2
+**Item Types:** 39
+
+### Types
+
+- Currency: Currency,Fragment
+- Item: Currency,DivinationCard,Essence,UniqueMap,Map,UniqueJewel,UniqueFlask,UniqueWeapon,UniqueArmour,UniqueAccessory,SkillGem,BaseType,Fossil,Resonator,Scarab,Beast,Incubator,Oil,Vial,DeliriumOrb,Invitation,BlightedMap,ClusterJewel,Artifact,BlightRavagedMap,ScourgedMap,Tattoo,Omen,Fragment,UniqueRelic,Memory,IncursionTemple,Coffin,AllflameEmber,KalguuranRune,UniqueIdol,UniqueTincture,Runegraft,Wombgift
+
+### Sample Response (Currency: first type)
+
+```json
+{
+  "type": "Currency",
+  "lines": [
+    {
+      "name": "Mirror of Kalandra",
+      "chaos": 51040,
+      "graph": [
+        0,
+        -6.30,
+        -15.83,
+        -19.09,
+        -13.80,
+        2.96,
+        3.77
+      ]
+    },
+    {
+      "name": "Hinekora's Lock",
+      "chaos": 7535,
+      "graph": [
+        0,
+        -3.71,
+        -11.52,
+        -15.08,
+        -10.83,
+        12.95,
+        24.43
+      ]
+    },
+    {
+      "name": "Mirror Shard",
+      "chaos": 2668,
+      "graph": [
+        0,
+        -8.60,
+        -15.58,
+        -25.35,
+        -19.12,
+        -3.43,
+        2.46
+      ]
+    },
+    {
+      "name": "Veiled Exalted Orb",
+      "chaos": 733.1,
+      "graph": [
+        0,
+        -8.05,
+        -21.37,
+        -25.37,
+        -19.15,
+        -16.10,
+        -17.10
+      ]
+    },
+    {
+      "name": "Reflecting Mist",
+      "chaos": 580.0,
+      "graph": [
+        0,
+        -8.25,
+        -25.54,
+        -37.55,
+        -36.16,
+        -29.47,
+        -25.47
+      ]
+    },
+    {
+      "name": "Fracturing Orb",
+      "chaos": 348.0,
+      "graph": [
+        0,
+        -15.32,
+        -20.28,
+        -24.57,
+        -24.27,
+        -19.02,
+        -17.46
+      ]
+    },
+    {
+      "name": "Awakener's Orb",
+      "chaos": 290.0,
+      "graph": [
+        0,
+        104.1,
+        106.1,
+        96.72,
+        108.8,
+        120.4,
+        124.2
+      ]
+    },
+    {
+      "name": "Orb of Dominance",
+      "chaos": 197.2,
+      "graph": [
+        0,
+        -2.88,
+        -0.34,
+        -9.56,
+        -7.13,
+        -1.97,
+        -0.25
+      ]
+    },
+    {
+      "name": "Hunter's Exalted Orb",
+      "chaos": 174.0,
+      "graph": [
+        0,
+        -0.83,
+        1.35,
+        -4.37,
+        -4.37,
+        0.94,
+        2.72
+      ]
+    },
+    {
+      "name": "Crusader's Exalted Orb",
+      "chaos": 139.2,
+      "graph": [
+        0,
+        4.68,
+        9.55,
+        4.52,
+        4.52,
+        10.32,
+        12.26
+      ]
+    },
+    {
+      "name": "Divine Orb",
+      "chaos": 116.0,
+      "graph": [
+        0,
+        -4.03,
+        -6.53,
+        -12.90,
+        -12.90,
+        -8.06,
+        -6.45
+      ]
+    },
+    {
+      "name": "Warlord's Exalted Orb",
+      "chaos": 100.0,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Orb of Conflict",
+      "chaos": 70.00,
+      "graph": [
+        0,
+        17,
+        6.4,
+        32.4,
+        38,
+        34,
+        40
+      ]
+    },
+    {
+      "name": "Tempering Orb",
+      "chaos": 60.40,
+      "graph": [
+        0,
+        -7,
+        -5.83,
+        -6.67,
+        0,
+        0,
+        0.67
+      ]
+    },
+    {
+      "name": "Tailoring Orb",
+      "chaos": 45.00,
+      "graph": [
+        0,
+        0,
+        0,
+        -4,
+        -10,
+        -10,
+        -10
+      ]
+    },
+    {
+      "name": "Redeemer's Exalted Orb",
+      "chaos": 32.70,
+      "graph": [
+        0,
+        0,
+        3.45,
+        3.45,
+        3.45,
+        17.24,
+        12.76
+      ]
+    },
+    {
+      "name": "Sacred Crystallised Lifeforce",
+      "chaos": 30.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0
+      ]
+    },
+    {
+      "name": "Shaper's Exalted Orb",
+      "chaos": 25.00,
+      "graph": [
+        0,
+        9.81,
+        10.74,
+        3.70,
+        -3.70,
+        -7.41,
+        -7.41
+      ]
+    },
+    {
+      "name": "Exceptional Eldritch Ember",
+      "chaos": 20.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Exceptional Eldritch Ichor",
+      "chaos": 20.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Eldritch Chaos Orb",
+      "chaos": 20.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -8.70,
+        -13.04
+      ]
+    },
+    {
+      "name": "Elder's Exalted Orb",
+      "chaos": 20.00,
+      "graph": [
+        0,
+        -2.6,
+        -0.4,
+        -8,
+        -16,
+        -20,
+        -20
+      ]
+    },
+    {
+      "name": "Orb of Remembrance",
+      "chaos": 20.00,
+      "graph": [
+        0,
+        -1.67,
+        -16.67,
+        -16.67,
+        -26.67,
+        -28,
+        -33.33
+      ]
+    },
+    {
+      "name": "Eldritch Orb of Annulment",
+      "chaos": 19.00,
+      "graph": [
+        0,
+        -9.09,
+        0,
+        -9.09,
+        -9.09,
+        -12.73,
+        -13.64
+      ]
+    },
+    {
+      "name": "Tainted Orb of Fusing",
+      "chaos": 15.00,
+      "graph": [
+        0,
+        0,
+        -5.88,
+        -5.88,
+        -11.76,
+        -11.76,
+        -11.76
+      ]
+    },
+    {
+      "name": "Tainted Exalted Orb",
+      "chaos": 15.00,
+      "graph": [
+        0,
+        2.30,
+        86.21,
+        44.83,
+        44.83,
+        106.9,
+        72.41
+      ]
+    },
+    {
+      "name": "Sacred Orb",
+      "chaos": 14.00,
+      "graph": [
+        0,
+        10.81,
+        8.11,
+        8.11,
+        24.32,
+        31.53,
+        26.13
+      ]
+    },
+    {
+      "name": "Fracturing Shard",
+      "chaos": 13.10,
+      "graph": [
+        0,
+        1.72,
+        -13.79,
+        -19.54,
+        -19.54,
+        -19.54,
+        -24.71
+      ]
+    },
+    {
+      "name": "Maven's Chisel of Scarabs",
+      "chaos": 13.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Veiled Chaos Orb",
+      "chaos": 12.00,
+      "graph": [
+        0,
+        -1,
+        -6.67,
+        -6.67,
+        -13.33,
+        -20,
+        -20
+      ]
+    },
+    {
+      "name": "Maven's Chisel of Proliferation",
+      "chaos": 10.00,
+      "graph": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Unstable Implant",
+      "chaos": 10.00,
+      "graph": [
+        0,
+        0,
+        0,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "name": "Foulborn Exalted Orb",
+      "chaos": 10.00,
+      "graph": [
+        0,
+        69.49,
+        69.49,
+        -15.25,
+        -15.25,
+        -15.25,
+        -15.25
+      ]
+    },
+    {
+      "name": "Maven's Chisel of Divination",
+      "chaos": 9.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -8,
+        -10
+      ]
+    },
+    {
+      "name": "Orb of Unravelling",
+      "chaos": 9.00,
+      "graph": [
+        0,
+        0,
+        0,
+        -4,
+        -2.5,
+        0,
+        -10
+      ]
+    },
+    {
+      "name": "Exalted Orb",
+      "chaos": 9.00,
+      "graph": [
+        0,
+        -10,
+        0,
+        -10,
+        -10,
+        -10,
+        -10
+      ]
+    },
+    {
+      "name": "Eldritch Exalted Orb",
+      "chaos": 8.40,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -6.67
+      ]
+    },
+    {
+      "name": "Otherworldly Scouting Report",
+      "chaos": 8.40,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        68
+      ]
+    },
+    {
+      "name": "Fertile Catalyst",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        17.5,
+        25,
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "name": "Prismatic Catalyst",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Tainted Mythic Orb",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Tainted Chaos Orb",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        -5.26,
+        -8.77,
+        -29.82,
+        -40.35,
+        -15.79,
+        -12.28
+      ]
+    },
+    {
+      "name": "Singular Scouting Report",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        66.67
+      ]
+    },
+    {
+      "name": "Influenced Scouting Report",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        0,
+        0,
+        -1.55,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Maven's Chisel of Avarice",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        6.75,
+        25,
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "name": "Orb of Intention",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        -16.67,
+        -16.67,
+        -16.67,
+        -16.67,
+        -16.67,
+        -16.67
+      ]
+    },
+    {
+      "name": "Foulborn Regal Orb",
+      "chaos": 5.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        25
+      ]
+    },
+    {
+      "name": "Ancient Orb",
+      "chaos": 4.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        24,
+        0
+      ]
+    },
+    {
+      "name": "Ritual Vessel",
+      "chaos": 4.00,
+      "graph": [
+        0,
+        33.33,
+        0,
+        0,
+        0,
+        0,
+        33.33
+      ]
+    },
+    {
+      "name": "Foulborn Orb of Augmentation",
+      "chaos": 3.90,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        33.33,
+        30
+      ]
+    },
+    {
+      "name": "Tainted Chromatic Orb",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Grand Eldritch Ember",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        1.68,
+        10.50,
+        1.42,
+        -11.76,
+        -7.56,
+        -11.76
+      ]
+    },
+    {
+      "name": "Comprehensive Scouting Report",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        20,
+        20,
+        20,
+        16.2,
+        20,
+        20
+      ]
+    },
+    {
+      "name": "Vaal Scouting Report",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        -7.67,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Delirious Scouting Report",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        50,
+        50
+      ]
+    },
+    {
+      "name": "Blighted Scouting Report",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        50
+      ]
+    },
+    {
+      "name": "Explorer's Scouting Report",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        50,
+        0,
+        0,
+        50,
+        50,
+        50
+      ]
+    },
+    {
+      "name": "Tainted Catalyst",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -11.88,
+        -25
+      ]
+    },
+    {
+      "name": "Augmentation Implant",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Regal Implant",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Exalted Implant",
+      "chaos": 3.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Grand Eldritch Ichor",
+      "chaos": 2.35,
+      "graph": [
+        0,
+        -3.85,
+        -3.85,
+        -8.46,
+        -3.85,
+        -3.85,
+        -9.64
+      ]
+    },
+    {
+      "name": "Orb of Annulment",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        -2.75,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Annulment Shard",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Turbulent Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Imbued Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "name": "Abrasive Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        3.45,
+        37.93,
+        37.93,
+        37.93,
+        37.93,
+        37.93
+      ]
+    },
+    {
+      "name": "Tempering Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Intrinsic Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "name": "Noxious Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        50,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "name": "Accelerating Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Unstable Catalyst",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Tainted Jeweller's Orb",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        1.08,
+        1.08,
+        1.08,
+        1.08,
+        1.08,
+        1.08
+      ]
+    },
+    {
+      "name": "Tainted Armourer's Scrap",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -3.33,
+        0
+      ]
+    },
+    {
+      "name": "Operative's Scouting Report",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Maven's Chisel of Procurement",
+      "chaos": 2.00,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Tainted Blacksmith's Whetstone",
+      "chaos": 1.08,
+      "graph": [
+        0,
+        0,
+        57.27,
+        83.64,
+        80.36,
+        0,
+        8
+      ]
+    },
+    {
+      "name": "Gemcutter's Prism",
+      "chaos": 1.00,
+      "graph": [
+        0,
+        -12.75,
+        -26.47,
+        -29.41,
+        -29.41,
+        -30.59,
+        -41.18
+      ]
+    },
+    {
+      "name": "Stacked Deck",
+      "chaos": 1.00,
+      "graph": [
+        0,
+        0,
+        0,
+        -33.33,
+        -33.33,
+        -33.33,
+        -33.33
+      ]
+    },
+    {
+      "name": "Harbinger's Orb",
+      "chaos": 1.00,
+      "graph": [
+        0,
+        2.59,
+        -12.00,
+        -21.43,
+        -21.43,
+        -47.62,
+        -47.62
+      ]
+    },
+    {
+      "name": "Exalted Shard",
+      "chaos": 1.00,
+      "graph": [
+        0,
+        25,
+        25,
+        25,
+        25,
+        -18.75,
+        -37.5
+      ]
+    },
+    {
+      "name": "Greater Eldritch Ichor",
+      "chaos": 0.9900,
+      "graph": [
+        0,
+        -23.08,
+        -23.08,
+        -23.08,
+        -23.08,
+        -23.08,
+        -23.85
+      ]
+    },
+    {
+      "name": "Greater Eldritch Ember",
+      "chaos": 0.8000,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Glassblower's Bauble",
+      "chaos": 0.7440,
+      "graph": [
+        0,
+        0,
+        -2,
+        -9.04,
+        -15.58,
+        -23,
+        -25.6
+      ]
+    },
+    {
+      "name": "Orb of Regret",
+      "chaos": 0.6139,
+      "graph": [
+        0,
+        -5.43,
+        -7.15,
+        -8.30,
+        -8.87,
+        -14.03,
+        -15.55
+      ]
+    },
+    {
+      "name": "Cartographer's Chisel",
+      "chaos": 0.4839,
+      "graph": [
+        0,
+        -5.6,
+        -20,
+        -20,
+        -20,
+        -23.2,
+        -22.58
+      ]
+    },
+    {
+      "name": "Vaal Orb",
+      "chaos": 0.4500,
+      "graph": [
+        0,
+        -12.97,
+        -15.82,
+        -6.84,
+        -4.96,
+        -4.96,
+        -4.96
+      ]
+    },
+    {
+      "name": "Regal Orb",
+      "chaos": 0.3333,
+      "graph": [
+        0,
+        0,
+        0,
+        -0.73,
+        -10.00,
+        -10.00,
+        -10.00
+      ]
+    },
+    {
+      "name": "Lesser Eldritch Ember",
+      "chaos": 0.3333,
+      "graph": [
+        0,
+        -4.79,
+        -8.48,
+        -17.30,
+        -23.74,
+        -23.74,
+        -23.74
+      ]
+    },
+    {
+      "name": "Lesser Eldritch Ichor",
+      "chaos": 0.3333,
+      "graph": [
+        0,
+        -20,
+        -33.33,
+        -33.33,
+        -33.33,
+        -33.33,
+        -33.33
+      ]
+    },
+    {
+      "name": "Enkindling Orb",
+      "chaos": 0.3226,
+      "graph": [
+        0,
+        0,
+        0,
+        -1.64,
+        -1.64,
+        -3.23,
+        -3.23
+      ]
+    },
+    {
+      "name": "Orb of Unmaking",
+      "chaos": 0.3000,
+      "graph": [
+        0,
+        -2.56,
+        -13.70,
+        -14.53,
+        -15.93,
+        -17.29,
+        -23.08
+      ]
+    },
+    {
+      "name": "Orb of Scouring",
+      "chaos": 0.2941,
+      "graph": [
+        0,
+        -2.24,
+        -6.17,
+        -7.58,
+        -8.50,
+        -12.35,
+        -10.29
+      ]
+    },
+    {
+      "name": "Engineer's Orb",
+      "chaos": 0.2833,
+      "graph": [
+        0,
+        0,
+        -1.41,
+        -13.00,
+        -47.50,
+        -50.00,
+        -57.50
+      ]
+    },
+    {
+      "name": "Blessed Orb",
+      "chaos": 0.2222,
+      "graph": [
+        0,
+        -0.46,
+        -2.92,
+        0.21,
+        -6.86,
+        -6.86,
+        -6.86
+      ]
+    },
+    {
+      "name": "Scroll of Wisdom",
+      "chaos": 0.2000,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        -72.5,
+        -75,
+        -80
+      ]
+    },
+    {
+      "name": "Orb of Horizons",
+      "chaos": 0.2010,
+      "graph": [
+        0,
+        0,
+        0,
+        0,
+        -2.54,
+        -2.99,
+        -9.54
+      ]
+    },
+    {
+      "name": "Instilling Orb",
+      "chaos": 0.2000,
+      "graph": [
+        0,
+        -3.33,
+        -16.67,
+        -16.67,
+        -18.7,
+        -33.33,
+        -33.33
+      ]
+    },
+    {
+      "name": "Orb of Alteration",
+      "chaos": 0.1392,
+      "graph": [
+        0,
+        -5.31,
+        -9.52,
+        -10.72,
+        -10.72,
+        -11.97,
+        -13.02
+      ]
+    },
+    {
+      "name": "Blacksmith's Whetstone",
+      "chaos": 0.1111,
+      "graph": [
+        0,
+        0,
+        -2.68,
+        -3.42,
+        -5.48,
+        -5.88,
+        -11.11
+      ]
+    },
+    {
+      "name": "Orb of Alchemy",
+      "chaos": 0.1000,
+      "graph": [
+        0,
+        5.89,
+        0,
+        0,
+        -1.52,
+        -7.34,
+        -10.00
+      ]
+    },
+    {
+      "name": "Orb of Fusing",
+      "chaos": 0.1000,
+      "graph": [
+        0,
+        -6.92,
+        -13.58,
+        -22.22,
+        -23.95,
+        -30.00,
+        -30.00
+      ]
+    },
+    {
+      "name": "Chromatic Orb",
+      "chaos": 0.1000,
+      "graph": [
+        0,
+        -10.84,
+        -10.90,
+        -10.90,
+        -10.90,
+        -13.95,
+        -19.81
+      ]
+    },
+    {
+      "name": "Armourer's Scrap",
+      "chaos": 0.1002,
+      "graph": [
+        0,
+        0,
+        -5.91,
+        -11.11,
+        -11.11,
+        -11.21,
+        -19.86
+      ]
+    },
+    {
+      "name": "Orb of Binding",
+      "chaos": 0.09804,
+      "graph": [
+        0,
+        1.12,
+        1.12,
+        2.57,
+        -10.11,
+        -19.10,
+        -20.69
+      ]
+    },
+    {
+      "name": "Orb of Chance",
+      "chaos": 0.07500,
+      "graph": [
+        0,
+        0,
+        -4.00,
+        -7.69,
+        -7.69,
+        -9.84,
+        -10.00
+      ]
+    },
+    {
+      "name": "Orb of Augmentation",
+      "chaos": 0.06204,
+      "graph": [
+        0,
+        -1.22,
+        -0.13,
+        -0.86,
+        -0.56,
+        -0.37,
+        -0.73
+      ]
+    },
+    {
+      "name": "Jeweller's Orb",
+      "chaos": 0.04376,
+      "graph": [
+        0,
+        -8.34,
+        -9.41,
+        -10.99,
+        -13.51,
+        -16.87,
+        -20.53
+      ]
+    },
+    {
+      "name": "Orb of Transmutation",
+      "chaos": 0.02500,
+      "graph": [
+        0,
+        -6.59,
+        -10.67,
+        -25.57,
+        -30.21,
+        -32.60,
+        -44.17
+      ]
+    },
+    {
+      "name": "Portal Scroll",
+      "chaos": 0.02500,
+      "graph": [
+        0,
+        -26.28,
+        -43.13,
+        -39.17,
+        -38.38,
+        -44.70,
+        -44.70
+      ]
+    },
+    {
+      "name": "Vivid Crystallised Lifeforce",
+      "chaos": 0.01740,
+      "graph": [
+        0,
+        1.61,
+        0.06,
+        -1.55,
+        0.50,
+        4.03,
+        7.94
+      ]
+    },
+    {
+      "name": "Primal Crystallised Lifeforce",
+      "chaos": 0.01508,
+      "graph": [
+        0,
+        -3.23,
+        -2.62,
+        -5.65,
+        -5.65,
+        -1.01,
+        1.34
+      ]
+    },
+    {
+      "name": "Wild Crystallised Lifeforce",
+      "chaos": 0.01276,
+      "graph": [
+        0,
+        -4.03,
+        -6.52,
+        -12.90,
+        -12.90,
+        -10.48,
+        -14.25
+      ]
+    }
+  ]
+}
+```
+
+### Sample Response (Item: first type)
+
+```json
+{
+  "type": "Currency",
+  "lines": []
 }
 ```
 

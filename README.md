@@ -7,6 +7,7 @@ Hi! I compiled **poe.ninja API** to use in projects
 - `Keepers`
 - `Standard`
 - `Hardcore`
+- Modes: `SSF`, `Ruthless` (use with league variants)
 
 ### Keepers League Information
 
@@ -118,6 +119,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 | [Base Types](#base-types) ✅              | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BaseType     |        |
 | [Unique Maps](#unique-maps) ✅            | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueMap    |        |
 | [Maps](#maps) ✅                          | https://poe.ninja/poe1/api/economy/stash/current/item/overview?type=Map&league=LEAGUE-NAME          |        |
+| [Dense Overviews](#dense-overviews) ✅    | https://poe.ninja/poe1/api/economy/stash/current/dense/overviews?league=LEAGUE-NAME                 | Batch endpoint |
 | [Unique Jewels](#unique-jewels) ✅        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueJewel  |        |
 | [Unique Flasks](#unique-flasks) ✅        | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueFlask  |        |
 | [Unique Weapons](#unique-weapons) ✅      | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueWeapon |        |
@@ -133,7 +135,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 | [Blight Ravaged Maps](#blight-ravaged-maps) ✅ | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BlightRavagedMap |        |
 | [Invitations](#invitations) ✅            | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Invitation   |        |
 
-| [Allflame Embers](#allflame-embers) ✅    | https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber   |        |
+| [Allflame Embers](#allflame-embers) ✅    | https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=AllflameEmber |        |
 
 ### Deprecated/Empty Endpoints (Keepers League)
 
@@ -212,6 +214,42 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
     },
 ]
 ```
+
+## Dense Overviews
+
+- `https://poe.ninja/poe1/api/economy/stash/current/dense/overviews?league=LEAGUE-NAME`
+- Returns multiple overviews in a single response for faster sync.
+- Top-level keys:
+  - `currencyOverviews`: array of objects `{ type, lines }` for currency categories
+  - `itemOverviews`: array of objects `{ type, lines }` for item categories
+- Each `lines` entry is a compact summary with key fields per type.
+
+Example structure:
+
+```json
+{
+  "currencyOverviews": [
+    {
+      "type": "Currency",
+      "lines": [
+        { "name": "Divine Orb", "chaos": 116.0, "graph": [0, -4.03, -6.53, -12.90, -12.90, -8.06, -6.45] }
+      ]
+    }
+  ],
+  "itemOverviews": [
+    {
+      "type": "UniqueWeapon",
+      "lines": [
+        { "name": "Starforge", "chaos": 133776.09, "graph": [0, 2.22, 6.52, 8.08, 5.41, 9.14, 9.37] }
+      ]
+    }
+  ]
+}
+```
+
+Notes:
+- Use dense overviews to reduce request count; fall back to individual endpoints for full schemas.
+- Field naming uses `graph` (trend) and `chaos` (value) per item.
 
 ## Fragment
 
@@ -360,7 +398,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Scarabs
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Scarab`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Scarab`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -406,7 +444,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Fossils
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Fossil`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Fossil`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -452,7 +490,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Resonators
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Resanator`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Resonator`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -493,7 +531,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Essences
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Essence`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Essence`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -579,7 +617,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Divination Cards
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DivinationCard`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=DivinationCard`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -626,7 +664,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Skill Gems
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=SkillGem`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=SkillGem`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -673,7 +711,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Base Types
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BaseType`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BaseType`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -714,7 +752,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Helmet Enchants
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=HelmetEnchant`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=HelmetEnchant`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -761,7 +799,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Unique Maps
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueMap`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueMap`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -859,7 +897,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Unique Jewels
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueJewel`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueJewel`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -900,7 +938,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Unique Flasks
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueFlask`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueFlask`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -959,7 +997,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Unique Weapons
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueWeapon`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueWeapon`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1033,7 +1071,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Unique Armours
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueArmour`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueArmour`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1102,7 +1140,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Unique Accessories
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueAccessory`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueAccessory`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1192,7 +1230,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Beasts
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Beast`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Beast`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1233,7 +1271,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Vials
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Beast`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Beast`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1274,7 +1312,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Delirium Orbs
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=DeliriumOrb`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=DeliriumOrb`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1322,7 +1360,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Omens
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Omen`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Omen`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1385,7 +1423,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Unique Relics
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=UniqueRelic`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=UniqueRelic`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1464,7 +1502,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Cluster Jewels
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=ClusterJewel`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=ClusterJewel`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1537,7 +1575,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Blighted Maps
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightedMap`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BlightedMap`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1589,7 +1627,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Blight Ravaged Maps
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=BlightRavagedMap`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=BlightRavagedMap`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1641,7 +1679,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Invitations
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Invitation`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Invitation`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1699,7 +1737,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Memories
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Memory`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Memory`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1768,7 +1806,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Coffins
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=Coffin`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=Coffin`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
@@ -1819,7 +1857,7 @@ Note: In Keepers, endpoints use `https://poe.ninja/poe1/api/economy/stash/curren
 
 ## Allflame Embers
 
-- `https://poe.ninja/api/data/itemoverview?league=LEAGUE-NAME&type=AllflameEmber`
+- `https://poe.ninja/poe1/api/economy/stash/current/item/overview?league=LEAGUE-NAME&type=AllflameEmber`
 - `LEAGUE-NAME`: Write League Names
 - `id`: Unique Item Id
 - `name`: Item Name
